@@ -25,6 +25,7 @@ import movies from "./movies.png";
 import gym_lovers from "./gym-lovers.png";
 import atb_media from "./atb-media.png";
 import coca_cola from "./coca-cola_zero.png";
+import film_hub from "./filmhub.png";
 
 import heart from "./heart-icon.png"
 
@@ -55,6 +56,7 @@ export {
   gym_lovers,
   atb_media,
   coca_cola,
+  film_hub,
   heart,
   arrow,
 };

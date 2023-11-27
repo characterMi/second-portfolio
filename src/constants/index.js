@@ -17,6 +17,7 @@ import {
   gym_lovers,
   atb_media,
   coca_cola,
+  film_hub,
   github,
   next
 } from "../assets";
@@ -209,6 +210,27 @@ const projects = [
     ],
     image: coca_cola,
     source_code_link: "https://github.com/charactermi/coca-cola_zero",
+  },
+  {
+    name: "Film Hub",
+    description:
+      "Filmhub is a comprehensive app for movie lovers. The app features a wide variety of movie from all over the world. Users can use the app to find their favorite movies and get comprehensive information about them.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "mui",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "redux",
+        color: "violet-text-gradient",
+      },
+    ],
+    image: film_hub,
+    source_code_link: "https://github.com/charactermi/film_hub",
   },
 ];
 
