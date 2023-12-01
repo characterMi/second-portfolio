@@ -1,6 +1,16 @@
-import { About, Contact, Skills, Hero, Navbar, Tech, Works, StarsCanvas, Footer, BackToTop } from "./components"
-import { BrowserRouter } from "react-router-dom"
-
+import {
+  About,
+  Contact,
+  Skills,
+  Hero,
+  Navbar,
+  Tech,
+  Works,
+  StarsCanvas,
+  Footer,
+  BackToTop,
+} from "./components";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
@@ -26,7 +36,7 @@ function App() {
         </div>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
