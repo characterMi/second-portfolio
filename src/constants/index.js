@@ -1,4 +1,8 @@
 import {
+  web_developer,
+  react_developer,
+  nextjs_developer,
+  creative_developer,
   javascript,
   typescript,
   html,
@@ -19,7 +23,7 @@ import {
   coca_cola,
   film_hub,
   github,
-  next
+  next,
 } from "../assets";
 
 export const navLinks = [
@@ -34,6 +38,25 @@ export const navLinks = [
   {
     id: "contact",
     title: "Contact",
+  },
+];
+
+const services = [
+  {
+    title: "Front-end Developer",
+    icon: web_developer,
+  },
+  {
+    title: "React Developer",
+    icon: react_developer,
+  },
+  {
+    title: "NextJs Developer",
+    icon: nextjs_developer,
+  },
+  {
+    title: "Creative Developer",
+    icon: creative_developer,
   },
 ];
 
@@ -147,6 +170,7 @@ const projects = [
     ],
     image: movies,
     source_code_link: "https://github.com/charactermi/movies",
+    live_site: "https://charactermi.github.io/movies",
   },
   {
     name: "Gym Lovers",
@@ -168,6 +192,7 @@ const projects = [
     ],
     image: gym_lovers,
     source_code_link: "https://github.com/charactermi/gym-lovers",
+    live_site: "https://charactermi.github.io/gym-lovers",
   },
   {
     name: "ATB Media",
@@ -189,6 +214,7 @@ const projects = [
     ],
     image: atb_media,
     source_code_link: "https://github.com/charactermi/atb_media",
+    live_site: "https://charactermi.github.io/atb_media",
   },
   {
     name: "Coca-Cola Zero",
@@ -210,6 +236,7 @@ const projects = [
     ],
     image: coca_cola,
     source_code_link: "https://github.com/charactermi/coca-cola_zero",
+    live_site: "https://charactermi.github.io/coca-cola_zero",
   },
   {
     name: "Film Hub",
@@ -231,6 +258,7 @@ const projects = [
     ],
     image: film_hub,
     source_code_link: "https://github.com/charactermi/film_hub",
+    live_site: "https://charactermi.github.io/film_hub",
   },
 ];
 
@@ -238,18 +266,18 @@ const socials = [
   {
     title: "Git hub",
     link: "https://github.com/characterMi",
-    image: github
+    image: github,
   },
   {
     title: "Telegram",
     link: "https://t.me/character_mi",
-    image: telegram
+    image: telegram,
   },
   {
     title: "Instagram",
     link: "https://instagram.com/character_mi",
-    image: instagram
+    image: instagram,
   },
-]
+];
 
-export { technologies, frame_works, projects, socials };
+export { services, technologies, frame_works, projects, socials };

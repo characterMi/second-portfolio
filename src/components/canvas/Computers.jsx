@@ -1,23 +1,74 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import {
+  ContactShadows,
+  Environment,
+  Html,
+  Preload,
+  PresentationControls,
+  Text,
+  useGLTF,
+} from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("/second-portfolio/desktop_pc/scene.gltf");
+  const laptop = useGLTF("/second-portfolio/mac_book/model.gltf");
 
   return (
-    <mesh>
-      <ambientLight intensity={0.1} />
-      <pointLight intensity={2} />
-      <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.3 : 0.65}
-        position={isMobile ? [0, -1.5, -0.5] : [0, -3.05, -1]}
-        rotation={[0, -0.1, -0.12]}
-      />
-    </mesh>
+    <>
+      {/* Controls */}
+      <PresentationControls
+        global
+        rotation={[0.13, 0.1, 0]}
+        polar={[-0.4, 0.2]}
+        azimuth={[-0.5, 0.75]}
+        config={{ mass: 2, tension: 400 }}
+        snap={{ mass: 4, tension: 400 }}
+      >
+        {/* Lighting */}
+        <pointLight intensity={2} />
+        <rectAreaLight
+          width={2.5}
+          height={1.65}
+          intensity={65}
+          color="#151030"
+          rotation={[0.1, Math.PI, 0]}
+          position={[0, 0.55, -1.15]}
+        />
+        {/* Object */}
+        <primitive
+          scale={isMobile ? 0.4 : 0.6}
+          object={laptop.scene}
+          position={isMobile ? [0.1, -0.9, 0] : [0.2, -1.4, 0]}
+        >
+          <Html
+            transform
+            distanceFactor={1.2}
+            position={[0, 1.56, -1.4]}
+            rotation-x={-0.256}
+          >
+            <iframe
+              className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
+              src="https://charactermi.github.io/portfolio"
+            >
+              Loading...
+            </iframe>
+          </Html>
+        </primitive>
+        {/* Text (Abolfazl) */}
+        <Text
+          font="/Caveat-Bold.ttf"
+          fontSize={isMobile ? 0.2 : 0.4}
+          position={isMobile ? [0.8, -0.3, -0.1] : [1.1, -0.4, 0.3]}
+          rotation-y={-1.5}
+          children={"ABOLFAZL\nTAGHADOSI"}
+          textAlign="center"
+        />
+      </PresentationControls>
+      {/* Shadow */}
+      <ContactShadows position-y={-1.4} opacity={0.4} scale={5} blur={2.4} />
+    </>
   );
 };
 
@@ -41,16 +92,11 @@ const ComputersCanvas = () => {
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [-2, 0.9, 3], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Environment preset="studio" />
+      <Environment preset="city" />
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 6}
-        />
         <Computers isMobile={isMobile} />
       </Suspense>
 

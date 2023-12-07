@@ -1,8 +1,14 @@
 import logo from "./logo.svg";
-import web from "./web.png";
+
+import web_developer from "./web_developer.png";
+import react_developer from "./react_developer.png";
+import nextjs_developer from "./nextjs_developer.png";
+import creative_developer from "./creative_developer.png";
+
 import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import website from "./website.png"
 
 import css from "./tech/css.svg";
 import git from "./tech/git.svg";
@@ -33,10 +39,14 @@ import arrow from "./arrow_up.svg"
 
 export {
   logo,
-  web,
+  web_developer,
+  react_developer,
+  nextjs_developer,
+  creative_developer,
   github,
   menu,
   close,
+  website,
   css,
   git,
   html,
