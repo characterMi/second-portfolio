@@ -23,7 +23,7 @@
   /* Firefox */
 }
 
-div:has(canvas) {
+.computer-canvas {
   touch-action: none;
 }
 

@@ -10,6 +10,8 @@ import {
   useGLTF,
 } from "@react-three/drei";
 
+import Font from "../../../public/Caveat-Bold.ttf"
+
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
@@ -31,7 +33,7 @@ const Computers = ({ isMobile }) => {
         <rectAreaLight
           width={2.5}
           height={1.65}
-          intensity={65}
+          intensity={115}
           color="#151030"
           rotation={[0.1, Math.PI, 0]}
           position={[0, 0.55, -1.15]}
@@ -58,7 +60,7 @@ const Computers = ({ isMobile }) => {
         </primitive>
         {/* Text (Abolfazl) */}
         <Text
-          font="/Caveat-Bold.ttf"
+          font={Font}
           fontSize={isMobile ? 0.2 : 0.4}
           position={isMobile ? [0.8, -0.3, -0.1] : [1.1, -0.4, 0.3]}
           rotation-y={-1.5}
@@ -94,6 +96,7 @@ const ComputersCanvas = () => {
       shadows
       camera={{ position: [-2, 0.9, 3], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
+      className="computer-canvas"
     >
       <Environment preset="city" />
       <Suspense fallback={<CanvasLoader />}>
