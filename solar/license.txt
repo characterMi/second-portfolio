@@ -1,0 +1,11 @@
+Model Information:
+* title:	Solar Impulse Flight Path
+* source:	https://sketchfab.com/3d-models/solar-impulse-flight-path-298e1ac1fdb048e892d036d588d4322c
+* author:	Solar Impulse (https://sketchfab.com/solarimpulse)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Solar Impulse Flight Path" (https://sketchfab.com/3d-models/solar-impulse-flight-path-298e1ac1fdb048e892d036d588d4322c) by Solar Impulse (https://sketchfab.com/solarimpulse) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
