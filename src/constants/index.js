@@ -161,7 +161,7 @@ const projects = [
     tags: [
       {
         name: "javascript",
-        color: "blue-text-gradient",
+        color: "yellow-text-gradient",
       },
       {
         name: "css",
@@ -179,7 +179,7 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "lightblue-text-gradient",
       },
       {
         name: "api",
@@ -187,7 +187,7 @@ const projects = [
       },
       {
         name: "mui",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
     ],
     image: gym_lovers,
@@ -201,15 +201,15 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "lightblue-text-gradient",
       },
       {
-        name: "axios",
+        name: "api",
         color: "green-text-gradient",
       },
       {
         name: "mui",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
     ],
     image: atb_media,
@@ -223,7 +223,7 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "lightblue-text-gradient",
       },
       {
         name: "threejs",
@@ -245,7 +245,7 @@ const projects = [
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "lightblue-text-gradient",
       },
       {
         name: "mui",
@@ -254,6 +254,10 @@ const projects = [
       {
         name: "redux",
         color: "violet-text-gradient",
+      },
+      {
+        name: "RESTapi",
+        color: "green-text-gradient",
       },
     ],
     image: film_hub,
