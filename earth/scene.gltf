@@ -3,24 +3,24 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 16387,
+      "count": 33700,
       "max": [
-        1.0000020265579224,
-        1.0000009536743164,
-        1.0
+        0.9872313737869263,
+        0.9975767135620117,
+        0.9872314929962158
       ],
       "min": [
-        -1.0,
-        -1.0,
-        -1.0
+        -0.9872310161590576,
+        -0.9975767135620117,
+        -0.9872310161590576
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 196644,
+      "byteOffset": 404400,
       "componentType": 5126,
-      "count": 16387,
+      "count": 33700,
       "max": [
         1.0,
         1.0,
@@ -34,12 +34,30 @@
       "type": "VEC3"
     },
     {
-      "bufferView": 1,
+      "bufferView": 3,
       "componentType": 5126,
-      "count": 16387,
+      "count": 33700,
       "max": [
         1.0,
+        0.20736022293567657,
+        1.0,
         1.0
+      ],
+      "min": [
+        -1.0,
+        -0.2073601931333542,
+        -1.0,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 33700,
+      "max": [
+        1.0000003576278687,
+        1.0000001192092896
       ],
       "min": [
         0.0,
@@ -50,70 +68,84 @@
     {
       "bufferView": 0,
       "componentType": 5125,
-      "count": 97536,
+      "count": 190464,
       "type": "SCALAR"
     }
   ],
   "asset": {
     "extras": {
-      "author": "Solar Impulse (https://sketchfab.com/solarimpulse)",
+      "author": "zisisbad (https://sketchfab.com/zisisbad)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/solar-impulse-flight-path-298e1ac1fdb048e892d036d588d4322c",
-      "title": "Solar Impulse Flight Path"
+      "source": "https://sketchfab.com/3d-models/earth-36ac223837984d9a841f39edabeefa10",
+      "title": "Earth"
     },
-    "generator": "Sketchfab-12.65.0",
+    "generator": "Sketchfab-12.66.0",
     "version": "2.0"
   },
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 390144,
+      "byteLength": 761856,
       "name": "floatBufferViews",
       "target": 34963
     },
     {
       "buffer": 0,
-      "byteLength": 131096,
-      "byteOffset": 390144,
+      "byteLength": 269600,
+      "byteOffset": 761856,
       "byteStride": 8,
       "name": "floatBufferViews",
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 393288,
-      "byteOffset": 521240,
+      "byteLength": 808800,
+      "byteOffset": 1031456,
       "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 539200,
+      "byteOffset": 1840256,
+      "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 914528,
+      "byteLength": 2379456,
       "uri": "scene.bin"
     }
-  ],
-  "extensionsUsed": [
-    "KHR_materials_unlit"
   ],
   "images": [
     {
       "uri": "textures/Material.001_baseColor.jpeg"
+    },
+    {
+      "uri": "textures/Material.001_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Material.001_normal.png"
     }
   ],
   "materials": [
     {
       "doubleSided": true,
-      "extensions": {
-        "KHR_materials_unlit": {}
-      },
       "name": "Material.001",
+      "normalTexture": {
+        "index": 2
+      },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 0
         },
-        "metallicFactor": 0.0
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
       }
     }
   ],
@@ -125,9 +157,10 @@
           "attributes": {
             "NORMAL": 1,
             "POSITION": 0,
-            "TEXCOORD_0": 2
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
           },
-          "indices": 3,
+          "indices": 4,
           "material": 0,
           "mode": 4
         }
@@ -163,11 +196,41 @@
       "children": [
         2
       ],
-      "name": "earth.obj.cleaner"
+      "name": "root"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "GLTF_SceneRootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "Sphere_2"
     },
     {
       "mesh": 0,
-      "name": "Object_2"
+      "name": "Object_4"
     }
   ],
   "samplers": [
@@ -191,6 +254,14 @@
     {
       "sampler": 0,
       "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
     }
   ]
 }
