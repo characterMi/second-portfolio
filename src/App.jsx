@@ -6,7 +6,6 @@ import {
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
   Footer,
   BackToTop,
 } from "./components";
@@ -24,7 +23,6 @@ const App = () => (
       <Works />
       <div className="relative z-0">
         <Contact />
-        <StarsCanvas />
       </div>
       <div className="border-t-[2px] border-gray-800 relative">
         <Footer />

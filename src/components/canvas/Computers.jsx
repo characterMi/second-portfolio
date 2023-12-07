@@ -28,16 +28,6 @@ const Computers = ({ isMobile }) => {
         config={{ mass: 2, tension: 400 }}
         snap={{ mass: 4, tension: 400 }}
       >
-        {/* Lighting */}
-        <pointLight intensity={0.5} />
-        <rectAreaLight
-          width={2.5}
-          height={1.65}
-          intensity={115}
-          color="#151030"
-          rotation={[0.1, Math.PI, 0]}
-          position={[0, 0.55, -1.15]}
-        />
         {/* Object */}
         <primitive
           scale={isMobile ? 0.4 : 0.6}
@@ -98,11 +88,10 @@ const ComputersCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
       className="computer-canvas"
     >
-      <Environment preset="city" />
       <Suspense fallback={<CanvasLoader />}>
+        <Environment preset="city" />
         <Computers isMobile={isMobile} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
