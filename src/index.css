@@ -49,8 +49,8 @@
 
 .yellow-text-gradient {
   background: #f2ef56;
-  background: -webkit-linear-gradient(to top, #f2ef56, #61603c);
-  background: linear-gradient(to top, #f2ef56, #61603c);
+  background: -webkit-linear-gradient(to top, #61603c, #f2ef56, #61603c);
+  background: linear-gradient(to top, #61603c, #f2ef56, #61603c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -66,7 +66,7 @@
 }
 
 .green-pink-gradient {
-  background: "#00cea8";
+  background: #00cea8;
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
@@ -89,8 +89,8 @@
 
 .black-text-gradient {
   background: #000000;
-  background: -webkit-linear-gradient(to right, #fff, #434343);
-  background: linear-gradient(to right, #fff, #434343);
+  background: -webkit-linear-gradient(to top, #000000, #fff, #000000);
+  background: linear-gradient(to top, #000000, #fff, #000000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

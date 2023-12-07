@@ -10,7 +10,7 @@ import {
   useGLTF,
 } from "@react-three/drei";
 
-import Font from "../../../public/Caveat-Bold.ttf"
+import Font from "../../../public/Caveat-Bold.ttf";
 
 import CanvasLoader from "../Loader";
 
@@ -29,7 +29,7 @@ const Computers = ({ isMobile }) => {
         snap={{ mass: 4, tension: 400 }}
       >
         {/* Lighting */}
-        <pointLight intensity={2} />
+        <pointLight intensity={0.5} />
         <rectAreaLight
           width={2.5}
           height={1.65}

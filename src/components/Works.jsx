@@ -13,7 +13,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
-  live_site
+  live_site,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.1, 0.75)}>

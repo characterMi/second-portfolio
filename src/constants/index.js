@@ -165,7 +165,7 @@ const projects = [
       },
       {
         name: "css",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
     ],
     image: movies,
@@ -183,7 +183,7 @@ const projects = [
       },
       {
         name: "api",
-        color: "green-text-gradient",
+        color: "pink-text-gradient",
       },
       {
         name: "mui",
@@ -205,7 +205,7 @@ const projects = [
       },
       {
         name: "api",
-        color: "green-text-gradient",
+        color: "pink-text-gradient",
       },
       {
         name: "mui",
@@ -249,7 +249,7 @@ const projects = [
       },
       {
         name: "mui",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
       {
         name: "redux",

@@ -20,11 +20,7 @@ const ServiceCard = ({ index, title, icon }) => (
         }}
         className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
       >
-        <img
-          src={icon}
-          alt={title}
-          className="w-16 h-16 object-contain"
-        />
+        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
 
         <h3 className="text-white text-[20px] font-bold text-center">
           {title}
@@ -46,8 +42,9 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
       >
         I'm a skilled web developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Next.js and Three.js. Let's
-        work together to bring your ideas to life ! More About Me 👇
+        JavaScript, and expertise in frameworks like React, Next.js and
+        Three.js. Let's work together to bring your ideas to life ! More About
+        Me 👇
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
