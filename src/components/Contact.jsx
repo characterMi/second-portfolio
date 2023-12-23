@@ -8,7 +8,7 @@ import { slideIn } from "../utils/motion";
 import { socials } from "../constants";
 
 const Contact = () => {
-  const form_ref = useRef();
+  const button_ref = useRef();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -24,6 +24,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (form.name && form.email && form.message) {
+      const alert_box = document.querySelector(".alert");
       setLoading(true);
       emailjs
         .send(
@@ -41,7 +42,14 @@ const Contact = () => {
         .then(
           () => {
             setLoading(false);
-            alert("Thank you ! I will get back to you as soon as possible.");
+            alert_box.innerHTML =
+              "Thank you ! I will get back to you as soon as possible.";
+            alert_box.classList.add("alert_box_animation");
+            button_ref.current.setAttribute('disabled', true)
+            setTimeout(() => {
+              alert_box.classList.remove("alert_box_animation");
+              button_ref.current.removeAttribute('disabled')
+            }, 8000);
             setForm({
               name: "",
               email: "",
@@ -50,8 +58,14 @@ const Contact = () => {
           },
           (error) => {
             setLoading(false);
+            alert_box.innerHTML = "Something went wrong.";
+            alert_box.classList.add("alert_box_animation");
+            button_ref.current.setAttribute('disabled', true)
+            setTimeout(() => {
+              alert_box.classList.remove("alert_box_animation");
+              button_ref.current.removeAttribute('disabled')
+            }, 8000);
             console.log(error);
-            alert("Something went wrong.");
           }
         );
     }
@@ -65,11 +79,7 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
-        <form
-          ref={form_ref}
-          onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
-        >
+        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name ?</span>
             <input
@@ -106,7 +116,8 @@ const Contact = () => {
           <div className="flex justify-between items-center">
             <button
               type="submit"
-              className="py-3 px-8 outlined-none w-fit bg-tertiary text-white font-bold shadow-md shadow-primary rounded-md"
+              className="py-3 px-8 outlined-none w-fit bg-tertiary text-white font-bold shadow-md shadow-primary rounded-md disabled:opacity-50"
+              ref={button_ref}
             >
               {loading ? "Sending ..." : "Send"}
             </button>
@@ -130,7 +141,7 @@ const Contact = () => {
       </motion.div>
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] cursor-grab"
       >
         <EarthCanvas />
       </motion.div>

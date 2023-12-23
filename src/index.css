@@ -39,6 +39,12 @@
   background: linear-gradient(to right, #434343, #000000);
 }
 
+.tertiary-gradient {
+  background: #151030;
+  background: linear-gradient(to left top, #29205e, #151030 70%);
+  background: -webkit-linear-gradient(to left top, #29205e, #151030 70%);
+}
+
 .lightblue-text-gradient {
   background: #56ccf2;
   background: -webkit-linear-gradient(to top, #5cd6ff, #b6edff);
@@ -255,5 +261,35 @@
       0em 2.5em 0 0em rgba(255, 255, 255, 0.2),
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
+  }
+}
+
+.alert_box_animation {
+  animation: alert_box_animation 8s ease;
+}
+
+@keyframes alert_box_animation {
+  10% {
+    right: 2rem;
+  }
+  90% {
+    right: 2rem;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@media (max-width: 600px) {
+  @keyframes alert_box_animation {
+    10% {
+      right: 0;
+    }
+    90% {
+      right: 0;
+    }
+    100% {
+      right: -100%;
+    }
   }
 }

@@ -35,7 +35,7 @@ const Computers = ({ isMobile }) => {
           position={isMobile ? [0.1, -0.9, 0] : [0.2, -1.4, 0]}
         >
           <Html
-            transform
+            transform={true}
             distanceFactor={1.2}
             position={[0, 1.56, -1.4]}
             rotation-x={-0.256}
@@ -67,7 +67,7 @@ const Computers = ({ isMobile }) => {
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQuery = window.matchMedia("(max-width: 650px)");
     setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = (e) => {
