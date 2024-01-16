@@ -23,6 +23,10 @@
   /* Firefox */
 }
 
+body {
+  background-color: #050816;
+}
+
 .computer-canvas {
   touch-action: none;
 }
@@ -43,6 +47,12 @@
   background: #151030;
   background: linear-gradient(to left top, #29205e, #151030 70%);
   background: -webkit-linear-gradient(to left top, #29205e, #151030 70%);
+}
+
+.tertiary-dropdown_gradient {
+  background: #151030;
+  background: linear-gradient(to top, #151030 1%, transparent 100%);
+  background: -webkit-linear-gradient(to top, #151030 1%, transparent 100%);
 }
 
 .lightblue-text-gradient {
@@ -269,10 +279,7 @@
 }
 
 @keyframes alert_box_animation {
-  10% {
-    right: 2rem;
-  }
-  90% {
+  5%, 95% {
     right: 2rem;
   }
   100% {
@@ -282,10 +289,7 @@
 
 @media (max-width: 600px) {
   @keyframes alert_box_animation {
-    10% {
-      right: 0;
-    }
-    90% {
+    5%, 95% {
       right: 0;
     }
     100% {

@@ -1,10 +1,11 @@
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../style";
-import { github, website } from "../assets";
+import { arrow, github, website } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useState } from "react";
 
 const ProjectCard = ({
   index,
@@ -15,8 +16,14 @@ const ProjectCard = ({
   source_code_link,
   live_site,
 }) => {
+  const [active, setActive] = useState(false);
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.1, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.1, 0.75)}
+      className='md:h-[420px]'
+      style={{ zIndex: 10 - index }}
+    >
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
@@ -50,11 +57,27 @@ const ProjectCard = ({
             </div>
           </div>
         </div>
-        <div className="mt-5">
+        <div className="mt-5 relative duration-200 dropdown">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <p className="mt-2 text-secondary text-[14px]">
+            {description.length > 75 && !active
+              ? `${description.slice(0, 75)}...`
+              : description}
+          </p>
+          <div
+            className={`w-full h-[60%] bottom-0 tertiary-dropdown_gradient absolute ${active ? "opacity-0" : "opacity-100"
+              }`}
+          />
+          <img
+            src={arrow}
+            className={`w-[30px] h-[30px] absolute left-[50%] ${active ? "bottom-[-1.5rem]" : "bottom-[-1rem]"
+              } cursor-pointer translate-x-[-50%] ${active ? "rotate-0" : "rotate-180"
+              } `}
+            alt="drop_down"
+            onClick={() => setActive((prev) => !prev)}
+          />
         </div>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap gap-2">
           {tags.map((tag, index) => (
             <p className={`text-[14px] ${tag.color}`} key={index}>
               #{tag.name}

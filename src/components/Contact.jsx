@@ -23,7 +23,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (form.name && form.email && form.message) {
+    if (
+      form.name &&
+      form.email &&
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/.test(form.email) &&
+      form.message
+    ) {
       const alert_box = document.querySelector(".alert");
       setLoading(true);
       emailjs
