@@ -1,7 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
 import {
-  ContactShadows,
   Environment,
   Html,
   Preload,
@@ -9,12 +6,14 @@ import {
   Text,
   useGLTF,
 } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Suspense, useEffect, useState } from "react";
 
-import Font from "../../../public/Caveat-Bold.ttf";
+import Font from "/Caveat-Bold.ttf";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computer = ({ isMobile }) => {
   const laptop = useGLTF("/second-portfolio/mac_book/model.gltf");
 
   return (
@@ -35,17 +34,17 @@ const Computers = ({ isMobile }) => {
           position={isMobile ? [0.1, -0.9, 0] : [0.2, -1.4, 0]}
         >
           <Html
-            transform={true}
-            distanceFactor={1.2}
+            transform
+            distanceFactor={1.17}
             position={[0, 1.56, -1.4]}
             rotation-x={-0.256}
           >
-            <iframe
-              className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
-              src="https://charactermi.github.io/portfolio"
-            >
-              Loading...
-            </iframe>
+            <Suspense fallback={<p className="text-center mt-10">Loading...</p>}>
+              <iframe
+                className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
+                src="https://charactermi.github.io/portfolio"
+              />
+            </Suspense>
           </Html>
         </primitive>
         {/* Text (Abolfazl) */}
@@ -58,8 +57,6 @@ const Computers = ({ isMobile }) => {
           textAlign="center"
         />
       </PresentationControls>
-      {/* Shadow */}
-      <ContactShadows position-y={-1.4} opacity={0.4} scale={5} blur={2.4} />
     </>
   );
 };
@@ -83,14 +80,13 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       frameloop="demand"
-      shadows
       camera={{ position: [-2, 0.9, 3], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
-      className="computer-canvas"
+      className="touch-none"
     >
       <Suspense fallback={<CanvasLoader />}>
-        <Environment preset="city" />
-        <Computers isMobile={isMobile} />
+        <Environment preset="lobby" />
+        <Computer isMobile={isMobile} />
       </Suspense>
       <Preload all />
     </Canvas>

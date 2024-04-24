@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { styles } from "../style";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo } from "../assets";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = () => {
             <span className="text-[#ED1703] text-[22px]">A</span>bolfazl
           </p>
         </div>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-10">
           {navLinks.map((link, index) => (
             <li
               key={index}
@@ -26,17 +26,17 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
-          />
+        <div className="md:hidden flex flex-1 justify-end items-center">
+
+          <div className="flex flex-col w-9 gap-y-[6px] cursor-pointer" style={{ direction: "rtl" }} onClick={() => setToggle(prev => !prev)}>
+            <div className={`h-1 rounded-full w-2/3 bg-white transition ${toggle && "opacity-0"}`} />
+            <div className={`h-1 rounded-full w-full bg-white transition ${toggle && "rotate-45 -mb-[10px]"}`} />
+            <div className={`h-1 rounded-full w-full bg-white transition ${toggle && "-rotate-45 mb-[10px]"}`} />
+          </div>
+
           <div
-            className={`${
-              !toggle ? " translate-y-[-100%]" : " translate-y-[75%]"
-            } p-6 duration-300 black-gradient absolute right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            className={`${!toggle ? " translate-y-[-100%]" : " translate-y-[75%]"
+              } p-6 transition black-gradient absolute right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link, index) => (
@@ -48,6 +48,7 @@ const Navbar = () => {
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
+
             </ul>
           </div>
         </div>

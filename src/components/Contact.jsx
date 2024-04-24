@@ -1,11 +1,11 @@
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { styles } from "../style";
-import { EarthCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { socials } from "../constants";
+import { SectionWrapper } from "../hoc";
+import { styles } from "../style";
+import { slideInHidden, slideInVisible } from "../utils/motion";
+import { EarthCanvas } from "./canvas";
 
 const Contact = () => {
   const button_ref = useRef();
@@ -79,7 +79,8 @@ const Contact = () => {
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex overflow-hidden">
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+        initial={slideInHidden("left")}
+        whileInView={slideInVisible("tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 py-8 px-4 sm:px-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
@@ -132,6 +133,8 @@ const Contact = () => {
                   href={social.link}
                   className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
                   key={index}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <img
                     alt={social.title}
@@ -145,7 +148,8 @@ const Contact = () => {
         </form>
       </motion.div>
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
+        initial={slideInHidden("right")}
+        whileInView={slideInVisible("tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] cursor-grab"
       >
         <EarthCanvas />

@@ -1,14 +1,16 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-import { styles } from "../style";
-import { arrow, github, website } from "../assets";
-import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
 import { useState } from "react";
+
+import { arrow, github, website } from "../assets";
+import { projects } from "../constants";
+import { SectionWrapper } from "../hoc";
+import { styles } from "../style";
+import { fadeInHidden, fadeInVisible, textVariantHidden, textVariantVisible } from "../utils/motion";
 
 const ProjectCard = ({
   index,
+  active,
+  setActive,
   name,
   description,
   tags,
@@ -16,18 +18,15 @@ const ProjectCard = ({
   source_code_link,
   live_site,
 }) => {
-  const [active, setActive] = useState(false);
 
   return (
     <motion.div
-      variants={fadeIn("up", "spring", index * 0.1, 0.75)}
+      initial={fadeInHidden("bottom")}
+      whileInView={fadeInVisible("spring", index * 0.1, 0.75)}
       className='md:h-[420px]'
       style={{ zIndex: 10 - index }}
     >
-      <Tilt
-        options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-      >
+      <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
         <div className="relative w-full h-[230px]">
           <img
             src={image}
@@ -59,22 +58,20 @@ const ProjectCard = ({
         </div>
         <div className="mt-5 relative duration-200 dropdown">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">
-            {description.length > 75 && !active
-              ? `${description.slice(0, 75)}...`
-              : description}
+          <p className={`mt-2 text-secondary text-[14px] transition-all duration-300 ${active === name ? "line-clamp-none" : "line-clamp-2"}`}>
+            {description}
           </p>
           <div
-            className={`w-full h-[60%] bottom-0 tertiary-dropdown_gradient absolute ${active ? "opacity-0" : "opacity-100"
+            className={`w-full h-[60%] bottom-0 tertiary-dropdown_gradient absolute transition-all ${active === name ? "opacity-0" : "opacity-100"
               }`}
           />
           <img
             src={arrow}
-            className={`w-[30px] h-[30px] absolute left-[50%] ${active ? "bottom-[-1.5rem]" : "bottom-[-1rem]"
-              } cursor-pointer translate-x-[-50%] ${active ? "rotate-0" : "rotate-180"
+            className={`w-[30px] h-[30px] absolute left-[50%] transition-all duration-300 ${active === name ? "bottom-[-1.5rem]" : "bottom-[-1rem]"
+              } cursor-pointer translate-x-[-50%] ${active === name ? "rotate-0" : "rotate-180"
               } `}
             alt="drop_down"
-            onClick={() => setActive((prev) => !prev)}
+            onClick={() => setActive((prev) => prev === name ? "none" : name)}
           />
         </div>
         <div className="mt-5 flex flex-wrap gap-2">
@@ -84,22 +81,28 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
-      </Tilt>
+      </div>
     </motion.div>
   );
 };
 
 const Works = () => {
+  const [active, setActive] = useState("none");
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial={textVariantHidden}
+        whileInView={textVariantVisible()}
+      >
         <p className={styles.sectionSubText}>My Works</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-          variants={fadeIn("", "", 0.1, 1)}
+          initial={textVariantHidden}
+          whileInView={textVariantVisible(0.3)}
         >
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
@@ -110,11 +113,12 @@ const Works = () => {
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} index={index} />
+          <ProjectCard key={index} active={active} setActive={setActive} {...project} index={index} />
         ))}
       </div>
+
     </>
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");

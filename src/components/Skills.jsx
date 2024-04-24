@@ -1,13 +1,14 @@
+import { motion } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
-import "react-vertical-timeline-component/style.min.css";
-import { styles } from "../style";
 import { frame_works } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
+import { styles } from "../style";
+import { textVariantHidden, textVariantVisible } from "../utils/motion";
+
+import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceCard = ({ frame_work }) => {
   return (
@@ -42,19 +43,19 @@ const ExperienceCard = ({ frame_work }) => {
 const Skills = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div initial={textVariantHidden} whileInView={textVariantVisible()}>
         <p className={styles.sectionSubText}>
           What technologies have I worked with ?
         </p>
         <h2 className={styles.sectionHeadText}>My Skills.</h2>
       </motion.div>
-      <div className="mt-20 flex flex-col">
+      <motion.div className="mt-20 flex flex-col" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
         <VerticalTimeline>
           {frame_works.map((frame_work, index) => (
             <ExperienceCard key={index} frame_work={frame_work} />
           ))}
         </VerticalTimeline>
-      </div>
+      </motion.div>
     </>
   );
 };
