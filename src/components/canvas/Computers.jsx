@@ -1,10 +1,9 @@
 import {
-  Environment,
   Html,
   Preload,
   PresentationControls,
   Text,
-  useGLTF,
+  useGLTF
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
@@ -12,6 +11,13 @@ import { Suspense, useEffect, useState } from "react";
 import Font from "/Caveat-Bold.ttf";
 
 import CanvasLoader from "../Loader";
+
+const Lights = () => (
+  <>
+    <ambientLight intensity={3} />
+    <spotLight intensity={1} position={[1.8, 0.5, -1.5]} />
+  </>
+)
 
 const Computer = ({ isMobile }) => {
   const laptop = useGLTF("/second-portfolio/mac_book/model.gltf");
@@ -85,7 +91,7 @@ const ComputersCanvas = () => {
       className="touch-none"
     >
       <Suspense fallback={<CanvasLoader />}>
-        <Environment preset="lobby" />
+        <Lights />
         <Computer isMobile={isMobile} />
       </Suspense>
       <Preload all />
