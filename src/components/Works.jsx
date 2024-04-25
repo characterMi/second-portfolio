@@ -27,31 +27,31 @@ const ProjectCard = ({
       style={{ zIndex: 10 - index }}
     >
       <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-auto">
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-auto object-cover rounded-2xl"
           />
           <div className="absolute inset-0 gap-2 flex m-1 card-img_hover justify-end">
             <div
               onClick={() => window.open(live_site, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer relative after:bg-white after:w-[40%] after:h-[40%] after:absolute after:rounded-full"
             >
               <img
                 src={website}
                 alt="Live"
-                className="w-1/2 h-1/2 object-contain"
+                className="w-1/2 h-1/2 object-contain z-[1]"
               />
             </div>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer relative after:bg-white after:w-1/2 after:h-1/2 after:absolute after:rounded-full"
             >
               <img
                 src={github}
                 alt="Github"
-                className="w-1/2 h-1/2 object-contain"
+                className="w-2/3 h-2/3 object-contain z-[1]"
               />
             </div>
           </div>

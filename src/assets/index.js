@@ -6,9 +6,8 @@ import react_developer from "./react_developer.png";
 import web_developer from "./web_developer.png";
 
 import close from "./close.svg";
-import github from "./github.png";
-import menu from "./menu.svg";
-import website from "./website.png";
+import github from "./github.svg";
+import website from "./website.svg";
 
 import bootstrap from "./tech/bootstrap.svg";
 import css from "./tech/css.svg";
@@ -65,7 +64,6 @@ export {
   logo,
   marblerace,
   melodimix,
-  menu,
   movies,
   mui,
   next,

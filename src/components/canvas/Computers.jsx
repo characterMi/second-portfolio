@@ -20,7 +20,7 @@ const Lights = () => (
 )
 
 const Computer = ({ isMobile }) => {
-  const laptop = useGLTF("/second-portfolio/mac_book/model.gltf");
+  const laptop = useGLTF("/scond-portfolio/mac_book/model.gltf");
 
   return (
     <>

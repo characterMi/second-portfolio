@@ -128,17 +128,17 @@ const Contact = () => {
               {loading ? "Sending ..." : "Send"}
             </button>
             <div className="flex justify-evenly w-[150px] h-auto">
-              {socials.map((social, index) => (
+              {socials.map((social) => (
                 <a
                   href={social.link}
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
-                  key={index}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full relative ${social.title === "Git hub" && "after:bg-white after:w-[78%] after:h-[78%] after:absolute after:rounded-full after:top-1/2 after:-translate-x-1/2 after:left-1/2 after:-translate-y-1/2 after:-z-[1]"}`}
+                  key={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
                     alt={social.title}
-                    className=" object-contain"
+                    className="object-contain"
                     src={social.image}
                   />
                 </a>
