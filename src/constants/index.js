@@ -20,6 +20,7 @@ import {
   mui,
   next,
   nextjs_developer,
+  pwa,
   react_developer,
   reactjs,
   redux,
@@ -126,6 +127,10 @@ const technologies = [
   {
     name: "Docker",
     icon: docker,
+  },
+  {
+    name: "PWA",
+    icon: pwa,
   },
   {
     name: "git",

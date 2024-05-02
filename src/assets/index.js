@@ -17,6 +17,7 @@ import docker from "./tech/icons8-docker.svg";
 import javascript from "./tech/js.svg";
 import mui from "./tech/mui.svg";
 import next from "./tech/nextjs.svg";
+import pwa from "./tech/pwa.png";
 import reactjs from "./tech/react.svg";
 import redux from "./tech/redux.svg";
 import rtk_query from "./tech/rtk_query.png";
@@ -68,6 +69,7 @@ export {
   mui,
   next,
   nextjs_developer,
+  pwa,
   react_developer,
   reactjs,
   redux,
