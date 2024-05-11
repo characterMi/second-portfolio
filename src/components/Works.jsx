@@ -58,7 +58,7 @@ const ProjectCard = ({
         </div>
         <div className="mt-5 relative duration-200 dropdown">
           <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className={`mt-2 text-secondary text-[14px] transition-all duration-300 ${active === name ? "line-clamp-none" : "line-clamp-2"}`}>
+          <p className={`mt-2 text-secondary text-[14px] transition-all text-justify leading-5 duration-300 ${active === name ? "line-clamp-none" : "line-clamp-2"}`}>
             {description}
           </p>
           <div

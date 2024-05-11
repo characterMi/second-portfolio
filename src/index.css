@@ -168,6 +168,14 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 0.5px rgb(237 233 254);
+  text-stroke: 1px rgb(237 233 254);
+  letter-spacing: 2px;
+  word-spacing: 1px;
+}
+
 .loader {
   transform: rotateZ(45deg);
   perspective: 1000px;
@@ -330,5 +338,106 @@ body {
     100% {
       right: -100%;
     }
+  }
+}
+
+.circle-animation {
+  animation: circle-animation 500ms alternate infinite;
+}
+
+.circle-animation:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.circle-animation:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes circle-animation {
+  0% {
+    top: 40px;
+    height: 3px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 12px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  @keyframes circle-animation {
+    0% {
+      top: 30px;
+      height: 2px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+    }
+
+    40% {
+      height: 8px;
+      border-radius: 50%;
+      transform: scaleX(1);
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  @keyframes circle-animation {
+    0% {
+      top: 30px;
+      height: 0.5px;
+      border-radius: 50px 50px 25px 25px;
+      transform: scaleX(1.7);
+    }
+
+    40% {
+      height: 5px;
+      border-radius: 50%;
+      transform: scaleX(1);
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}
+
+.shadow-animation {
+  animation: shadow-animation 500ms alternate 200ms infinite;
+}
+
+.shadow-animation:first-child {
+  animation-delay: 0ms;
+}
+
+.shadow-animation:last-child {
+  animation-delay: 300ms;
+}
+
+@keyframes shadow-animation {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
   }
 }
