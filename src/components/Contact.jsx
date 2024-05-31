@@ -1,9 +1,9 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import { CharacterAnimation } from ".";
 import { socials } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { styles } from "../style";
 import { slideInHidden, slideInVisible } from "../utils/motion";
 import { EarthCanvas } from "./canvas";
 
@@ -83,8 +83,8 @@ const Contact = () => {
         whileInView={slideInVisible("tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 py-8 px-4 sm:px-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <CharacterAnimation text="Get in touch" textStyle="sectionSubText" />
+        <CharacterAnimation text="Contact." textStyle="sectionHeadText" />
         <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name ?</span>

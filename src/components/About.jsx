@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
 
+import { CharacterAnimation, WordAnimation } from ".";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { styles } from "../style";
-import { fadeInHidden, fadeInVisible, textVariantHidden, textVariantVisible } from "../utils/motion";
+import { fadeInHidden, fadeInVisible } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt
-    className="sm:w-[250px] w-full"
+    className="w-full"
     options={{
       max: 45,
       scale: 1,
@@ -34,19 +34,14 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div initial={textVariantHidden} whileInView={textVariantVisible()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
-      <motion.p
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]" initial={textVariantHidden}
-        whileInView={textVariantVisible(0.3)}
-      >
-        I&apos;m a skilled web developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks and libraries like React, Next.js, TailwindCSS and
-        Three.js. Let&apos;s work together to bring your ideas to life !
-      </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div>
+        <CharacterAnimation text="Introduction" textStyle="sectionSubText" />
+        <CharacterAnimation text="Overview." textStyle="sectionHeadText" />
+      </div>
+      <div className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]">
+        <WordAnimation text="I&apos;m a skilled web developer with experience in TypeScript and JavaScript, and expertise in frameworks and libraries like React, Next.js, TailwindCSS and Three.js. Let&apos;s work together to bring your ideas to life !" />
+      </div>
+      <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

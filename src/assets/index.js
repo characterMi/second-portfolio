@@ -20,9 +20,9 @@ import next from "./tech/nextjs.svg";
 import pwa from "./tech/pwa.png";
 import reactjs from "./tech/react.svg";
 import redux from "./tech/redux.svg";
-import rtk_query from "./tech/rtk_query.png";
 import sass from "./tech/sass.svg";
 import tailwind from "./tech/tailwind.svg";
+import tanstack_query from "./tech/tanstack_query.png";
 import threejs from "./tech/threejs.svg";
 import typescript from "./tech/typescript.svg";
 
@@ -30,6 +30,7 @@ import linkedin from "./icons8-linkedin.svg";
 import telegram from "./telegram.svg";
 
 import atb_media from "./atb-media.png";
+import car_game from "./car-game.png";
 import coca_cola from "./coca-cola_zero.png";
 import designwave from "./designwave.png";
 import film_hub from "./filmhub.png";
@@ -47,6 +48,7 @@ export {
   arrow,
   atb_media,
   bootstrap,
+  car_game,
   close,
   coca_cola,
   creative_developer,
@@ -73,9 +75,9 @@ export {
   react_developer,
   reactjs,
   redux,
-  rtk_query,
   sass,
   tailwind,
+  tanstack_query,
   telegram,
   threejs,
   typescript,

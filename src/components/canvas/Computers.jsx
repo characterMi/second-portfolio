@@ -1,6 +1,5 @@
 import {
   Html,
-  Preload,
   PresentationControls,
   Text,
   useGLTF
@@ -20,7 +19,8 @@ const Lights = () => (
 )
 
 const Computer = ({ isMobile }) => {
-  const laptop = useGLTF("/second-portfolio/mac_book/model.gltf");
+  const { scene } = useGLTF("/second-portfolio/mac_book/model.gltf");
+  const [isLoading, setIsLoading] = useState(true)
 
   return (
     <>
@@ -36,7 +36,7 @@ const Computer = ({ isMobile }) => {
         {/* Object */}
         <primitive
           scale={isMobile ? 0.4 : 0.6}
-          object={laptop.scene}
+          object={scene}
           position={isMobile ? [0.1, -0.9, 0] : [0.2, -1.4, 0]}
         >
           <Html
@@ -45,12 +45,13 @@ const Computer = ({ isMobile }) => {
             position={[0, 1.56, -1.4]}
             rotation-x={-0.256}
           >
-            <Suspense fallback={<p className="text-center mt-10">Loading...</p>}>
-              <iframe
-                className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
-                src="https://charactermi.github.io/portfolio"
-              />
-            </Suspense>
+            <iframe
+              className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
+              style={{ display: isLoading ? "none" : "block" }}
+              src="https://charactermi.github.io/portfolio"
+              onLoad={() => setIsLoading(false)}
+            />
+            {isLoading && <p className="text-4xl rotate-2">Loading the website...</p>}
           </Html>
         </primitive>
         {/* Text (Abolfazl) */}
@@ -83,6 +84,7 @@ const ComputersCanvas = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+
   return (
     <Canvas
       frameloop="demand"
@@ -94,9 +96,10 @@ const ComputersCanvas = () => {
         <Lights />
         <Computer isMobile={isMobile} />
       </Suspense>
-      <Preload all />
     </Canvas>
   );
 };
+
+useGLTF.preload("/second-portfolio/mac_book/model.gltf")
 
 export default ComputersCanvas;

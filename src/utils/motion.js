@@ -1,3 +1,70 @@
+export const heroHeadTextAnimation = {
+  initial: {
+    scaleY: 0,
+    rotateX: 45,
+    opacity: 0,
+  },
+  start: {
+    scaleY: 1,
+    rotateX: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      type: "spring",
+    },
+  },
+};
+
+export const heroSubTextAnimation = {
+  initial: {
+    paddingTop: "50px",
+  },
+  start: (index) => ({
+    paddingTop: "0px",
+    transition: {
+      duration: 0.75,
+      type: "spring",
+      delay: 1 + index * 0.1,
+    },
+  }),
+};
+
+export const zoomIn = {
+  initial: {
+    scale: 0,
+  },
+  start: {
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      type: "spring",
+    },
+  },
+  exit: {
+    scale: 0,
+  },
+};
+
+export const increaseHeight = {
+  initial: {
+    opacity: 0,
+    scaleY: 0,
+  },
+  start: {
+    opacity: 1,
+    scaleY: 1,
+    transition: {
+      duration: 0.75,
+      type: "spring",
+      delay: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+    scaleY: 0,
+  },
+};
+
 export const textVariantHidden = {
   opacity: 0,
   y: -50,
@@ -31,21 +98,32 @@ export const fadeInVisible = (type, delay, duration) => ({
   },
 });
 
-export const zoomInHidden = {
-  scale: 0,
-  opacity: 0,
-};
-
-export const zoomInVisible = (delay, duration) => ({
-  scale: 1,
-  opacity: 1,
-  transition: {
-    type: "tween",
-    delay: delay,
-    duration: duration,
-    ease: "easeOut",
+export const rotateIn = {
+  initial: {
+    opacity: 0,
+    rotateX: 120,
   },
-});
+  enter: (i) => ({
+    opacity: 1,
+    rotateX: 0,
+    transition: {
+      type: "tween",
+      delay: i * 0.05,
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  }),
+  exit: (i) => ({
+    opacity: 0,
+    rotateX: 120,
+    transition: {
+      type: "tween",
+      delay: i * 0.05,
+      ease: "easeOut",
+      duration: 0.5,
+    },
+  }),
+};
 
 export const slideInHidden = (direction) => ({
   x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,
@@ -63,6 +141,23 @@ export const slideInVisible = (type, delay, duration) => ({
   },
 });
 
+export const navBarSlideIn = {
+  initial: {
+    y: "-100%",
+  },
+  enter: {
+    y: "0%",
+    transition: {
+      duration: 0.75,
+      type: "spring",
+      delay: 0.5,
+      stiffness: 350,
+      damping: 10,
+      mass: 0.5,
+    },
+  },
+};
+
 export const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},
@@ -73,4 +168,47 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
       },
     },
   };
+};
+
+// Menu
+export const menuSlide = {
+  initial: {
+    x: "calc(100% + 100px)",
+  },
+  enter: {
+    x: "0",
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+  exit: {
+    x: "calc(100% + 100px)",
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+    },
+  },
+};
+
+export const slide = {
+  initial: {
+    x: "80px",
+  },
+  enter: (index) => ({
+    x: "0px",
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+      delay: 0.05 * index,
+    },
+  }),
+  exit: (index) => ({
+    x: "80px",
+    transition: {
+      duration: 0.8,
+      ease: [0.76, 0, 0.24, 1],
+      delay: 0.05 * index,
+    },
+  }),
 };

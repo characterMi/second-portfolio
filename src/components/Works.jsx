@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+import { CharacterAnimation, WordAnimation } from ".";
 import { arrow, github, website } from "../assets";
 import { projects } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { styles } from "../style";
-import { fadeInHidden, fadeInVisible, textVariantHidden, textVariantVisible } from "../utils/motion";
+import { fadeInHidden, fadeInVisible } from "../utils/motion";
 
 const ProjectCard = ({
   index,
@@ -21,8 +21,8 @@ const ProjectCard = ({
 
   return (
     <motion.div
-      initial={fadeInHidden("bottom")}
-      whileInView={fadeInVisible("spring", index * 0.1, 0.75)}
+      initial={fadeInHidden("up")}
+      whileInView={fadeInVisible("spring", index * 0.05, 0.75)}
       className='md:h-[420px]'
       style={{ zIndex: 10 - index }}
     >
@@ -91,25 +91,14 @@ const Works = () => {
 
   return (
     <>
-      <motion.div
-        initial={textVariantHidden}
-        whileInView={textVariantVisible()}
-      >
-        <p className={styles.sectionSubText}>My Works</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
-      </motion.div>
+      <div>
+        <CharacterAnimation text="My Works" textStyle="sectionSubText" />
+        <CharacterAnimation text="Projects." textStyle="sectionHeadText" />
+      </div>
       <div className="w-full flex">
-        <motion.p
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
-          initial={textVariantHidden}
-          whileInView={textVariantVisible(0.3)}
-        >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
-        </motion.p>
+        <div className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+          <WordAnimation text="Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It  reflects my ability to solve complex problems, work with different technologies, and manage projects  effectively." />
+        </div>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (

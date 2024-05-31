@@ -1,13 +1,18 @@
-import { useState } from "react";
-import { styles } from "../style";
-import { navLinks } from "../constants";
+import { motion } from "framer-motion";
 import { logo } from "../assets";
+import { navLinks } from "../constants";
+import { styles } from "../style";
+import { navBarSlideIn } from "../utils/motion";
+import Magnetic from "./Magnetic";
+import MobileSidebar from "./MobileSidebar";
 
 const Navbar = () => {
-  const [toggle, setToggle] = useState(false);
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 z-20 bg-primary`}
+    <motion.nav
+      className={`${styles.paddingX} w-full flex items-center py-5 bg-primary/90 backdrop-blur-sm fixed top-0 left-0 z-[100000000]`}
+      initial="initial"
+      animate="enter"
+      variants={navBarSlideIn}
     >
       <div className="w-full flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
@@ -17,43 +22,21 @@ const Navbar = () => {
           </p>
         </div>
         <ul className="list-none hidden md:flex flex-row gap-10">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer duration-200"
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
+          {navLinks.map((link) => (
+            <Magnetic key={link.id}>
+              <li
+                className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer duration-200"
+              >
+                <a href={link.id}>{link.title}</a>
+              </li>
+            </Magnetic>
           ))}
         </ul>
-        <div className="md:hidden flex flex-1 justify-end items-center">
 
-          <div className="flex flex-col w-9 gap-y-[6px] cursor-pointer" style={{ direction: "rtl" }} onClick={() => setToggle(prev => !prev)}>
-            <div className={`h-1 rounded-full w-2/3 bg-white transition ${toggle && "opacity-0"}`} />
-            <div className={`h-1 rounded-full w-full bg-white transition ${toggle && "rotate-45 -mb-[10px]"}`} />
-            <div className={`h-1 rounded-full w-full bg-white transition ${toggle && "-rotate-45 mb-[10px]"}`} />
-          </div>
+        <MobileSidebar />
 
-          <div
-            className={`${!toggle ? " translate-y-[-100%]" : " translate-y-[75%]"
-              } p-6 transition black-gradient absolute right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-          >
-            <ul className="list-none flex justify-end items-start flex-col gap-4">
-              {navLinks.map((link, index) => (
-                <li
-                  key={index}
-                  className="hover:text-white text-secondary font-poppins font-medium cursor-pointer text-[16px]"
-                  onClick={() => setToggle(!toggle)}
-                >
-                  <a href={`#${link.id}`}>{link.title}</a>
-                </li>
-              ))}
-
-            </ul>
-          </div>
-        </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -6,6 +6,7 @@ import { Stars } from "./Stars";
 
 const Earth = () => {
   const earth = useGLTF("/second-portfolio/planet/scene.glb");
+
   return (
     <primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
   );
@@ -31,5 +32,7 @@ const EarthCanvas = () => {
     </Canvas>
   );
 };
+
+useGLTF.preload("/second-portfolio/planet/scene.glb")
 
 export default EarthCanvas;

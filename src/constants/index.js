@@ -1,6 +1,7 @@
 import {
   atb_media,
   bootstrap,
+  car_game,
   coca_cola,
   creative_developer,
   css,
@@ -24,9 +25,9 @@ import {
   react_developer,
   reactjs,
   redux,
-  rtk_query,
   sass,
   tailwind,
+  tanstack_query,
   telegram,
   threejs,
   typescript,
@@ -35,19 +36,19 @@ import {
 
 export const navLinks = [
   {
-    id: "about",
+    id: "#about",
     title: "About",
   },
   {
-    id: "skills",
+    id: "#skills",
     title: "Skills",
   },
   {
-    id: "projects",
+    id: "#projects",
     title: "Projects",
   },
   {
-    id: "contact",
+    id: "#contact",
     title: "Contact",
   },
 ];
@@ -110,7 +111,7 @@ const technologies = [
   },
   {
     name: "React-Query",
-    icon: rtk_query,
+    icon: tanstack_query,
   },
   {
     name: "Tailwind CSS",
@@ -326,6 +327,28 @@ const projects = [
     live_site: "https://charactermi.github.io/marble-race",
   },
   {
+    name: "Car Game",
+    description:
+      "This game offers a captivating and dynamic visual experience for users, and thanks to its responsive design, it runs smoothly on all devices. In this game, you enter a meticulously designed 3D world. The use of three.js allows you to create complex 3D models and realistic environments, while react-three-fiber helps you seamlessly integrate these elements into a React environment. One of the standout features of this game is its responsiveness. No matter whether you are using a smartphone, tablet, or personal computer, you can enjoy the game. The responsive design ensures that the game's graphical elements and user interface automatically adjust to the size of your screen, providing an optimized and enjoyable gaming experience at all times. This game is not only visually stunning but also technically advanced. The combination of three.js and react-three-fiber allows developers to leverage the strengths of both technologies to create a dynamic and engaging 3D game that also performs well. Overall, this game is a great example of how modern web technologies can be used to create exciting and immersive gaming experiences.",
+    tags: [
+      {
+        name: "react",
+        color: "lightblue-text-gradient",
+      },
+      {
+        name: "three.js",
+        color: "black-text-gradient",
+      },
+      {
+        name: "css",
+        color: "blue-text-gradient",
+      },
+    ],
+    image: car_game,
+    source_code_link: "https://github.com/charactermi/car-game",
+    live_site: "https://charactermi.github.io/car-game",
+  },
+  {
     name: "Gym Lovers",
     description:
       "a modern Web application fitness exercises app, with the functionality to choose exercise categories and specific muscle groups, browse more than 1000 exercises with practical examples and much more...",
@@ -396,14 +419,14 @@ const socials = [
     image: github,
   },
   {
-    title: "Telegram",
-    link: "https://t.me/character_mi",
-    image: telegram,
-  },
-  {
     title: "Linkedin",
     link: "https://linkedin.com/in/abolfazl-taghadosi/",
     image: linkedin,
+  },
+  {
+    title: "Telegram",
+    link: "https://t.me/character_mi",
+    image: telegram,
   },
 ];
 
