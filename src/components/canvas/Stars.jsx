@@ -6,7 +6,7 @@ import { useRef } from "react";
 export const Stars = (props) => {
   const ref = useRef();
 
-  const sphere = random.inSphere(new Float32Array(1000), { radius: 1.2 });
+  const sphere = random.inSphere(new Float32Array(300), { radius: 1.2 });
 
   useFrame((_, delta) => {
     ref.current.rotation.x -= delta / 10;

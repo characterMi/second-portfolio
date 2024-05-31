@@ -8,7 +8,7 @@ const TimeLine = () => {
         <section className="relative">
             <motion.div className="h-full w-1 bg-white absolute top-0 left-[23px] sm:left-[25px] md:left-[27px] min-[1170px]:left-1/2 min-[1170px]:-translate-x-1/2 origin-top" variants={increaseHeight} initial="initial" whileInView="start" exit="exit" />
 
-            <div className="w-full h-full flex flex-col gap-y-8 py-8">
+            <div className="w-full h-full flex flex-col gap-y-8 py-8 overflow-hidden">
                 {frame_works.map((technology, index) => (
                     <Skill key={technology.title} {...technology} index={index} />
                 ))}
@@ -87,7 +87,7 @@ const Skill = ({ title, languages_name, icon, iconBg, date, index }) => {
             className="w-full flex flex-row-reverse justify-between items-center min-[1170px]:px-10 min-[1170px]:flex-row gap-8"
         >
             <motion.div
-                className="w-full min-[1170px]:w-[430px] bg-tertiary p-8 rounded-md border-b-4 relative" style={returnStyle("border")}
+                className="w-full min-[1170px]:w-[430px] bg-tertiary p-4 sm:p-8 rounded-md border-b-4 relative" style={returnStyle("border")}
                 initial={fadeInHidden(viewport < 1170 ? "left" : index % 2 ? "left" : "right")}
                 whileInView={fadeInVisible("spring", index * 0.05, 0.75)}
             >
