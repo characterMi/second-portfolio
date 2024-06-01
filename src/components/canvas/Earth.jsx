@@ -17,7 +17,7 @@ const EarthCanvas = () => {
     <Canvas
       shadows
       gl={{ preserveDrawingBuffer: true }}
-      camera={{ fov: 50, position: [-2, 3, 6] }}
+      camera={{ position: [0, 0, 5] }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

@@ -87,9 +87,10 @@ const Skill = ({ title, languages_name, icon, iconBg, date, index }) => {
             className="w-full flex flex-row-reverse justify-between items-center min-[1170px]:px-10 min-[1170px]:flex-row gap-8"
         >
             <motion.div
-                className="w-full min-[1170px]:w-[430px] bg-tertiary p-4 sm:p-8 rounded-md border-b-4 relative" style={returnStyle("border")}
+                className="w-full min-[1170px]:w-[430px] bg-tertiary p-4 sm:p-8 rounded-md border-b-4 relative"
+                style={returnStyle("border")}
                 initial={fadeInHidden(viewport < 1170 ? "left" : index % 2 ? "left" : "right")}
-                whileInView={fadeInVisible("spring", index * 0.05, 0.75)}
+                whileInView={fadeInVisible("spring", 0.5 + index * 0.05, 0.75)}
             >
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
                 <h5 className="text-secondary">{languages_name}</h5>
@@ -97,7 +98,7 @@ const Skill = ({ title, languages_name, icon, iconBg, date, index }) => {
                 <div className="border-8 border-secondary border-y-primary absolute top-1/3" style={returnStyle("arrow")} />
             </motion.div>
 
-            <motion.div className="aspect-square w-16 rounded-full border-4 z-10 -mt-8 flex justify-center items-center relative whitespace-nowrap" style={{ backgroundColor: iconBg }} variants={zoomIn} initial="initial" whileInView="start" exit="exit">
+            <motion.div className="aspect-square w-16 rounded-full border-4 z-10 -mt-8 flex justify-center items-center relative whitespace-nowrap" style={{ backgroundColor: iconBg }} variants={zoomIn} custom={0.5} initial="initial" whileInView="start" exit="exit">
                 <img src={icon} alt={title} className="w-2/3 h-2/3 object-contain" />
                 <div className="absolute" style={returnStyle("date")}>
                     {date}

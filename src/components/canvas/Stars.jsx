@@ -6,7 +6,7 @@ import { useRef } from "react";
 export const Stars = (props) => {
   const ref = useRef();
 
-  const sphere = random.inSphere(new Float32Array(300), { radius: 1.2 });
+  const sphere = random.inSphere(new Float32Array(250), { radius: 1.2 });
 
   useFrame((_, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -18,7 +18,7 @@ export const Stars = (props) => {
         <PointMaterial
           transparent
           color="#f272c8"
-          size={0.045}
+          size={0.04}
           sizeAttenuation={true}
           depthWrite={false}
         />

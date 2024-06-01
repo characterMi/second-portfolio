@@ -13,7 +13,7 @@ const Hero = () => {
       >
         <div className="flex flex-col justify-center items-center mt-5">
           <motion.div className="w-5 h-5 rounded-full bg-[#915eff]" variants={zoomIn} initial='initial' animate="start" />
-          <motion.div variants={increaseHeight} initial='initial' animate="start" className="w-1 sm:h-80 h-40 violet-gradient origin-top" />
+          <motion.div variants={increaseHeight} custom={1} initial='initial' animate="start" className="w-1 sm:h-80 h-40 violet-gradient origin-top" />
         </div>
         <div>
           <motion.h1 className={`${styles.heroHeadText} text-white`} variants={heroHeadTextAnimation} initial="initial" animate="start">
@@ -31,12 +31,31 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <ComputersCanvas />
+
+      <motion.section
+        initial={{ opacity: 0, display: "none" }}
+        animate={{ opacity: 1, display: "inherit" }}
+        transition={{
+          delay: 3,
+        }}
+        className="w-full h-full"
+      >
+        <ComputersCanvas />
+      </motion.section>
+
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
-          <div className="w-[25px] h-[54px] rounded-3xl border-4 border-secondary flex justify-center items-start p-1">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: 3.5,
+              duration: 1,
+            }}
+            className="w-[25px] h-[54px] rounded-3xl border-4 border-secondary flex justify-center items-start p-1"
+          >
             <motion.div
-              animate={{ y: [0, 24, 0] }}
+              animate={{ y: [0, 28, 0] }}
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
@@ -44,7 +63,7 @@ const Hero = () => {
               }}
               className="w-2 h-2 rounded-full bg-secondary mb-10"
             />
-          </div>
+          </motion.div>
         </a>
       </div>
     </section>

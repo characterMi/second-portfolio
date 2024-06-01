@@ -1,13 +1,15 @@
 import {
   About,
+  Aurora,
   BackToTop,
   Contact,
+  CurveText,
   Footer,
   Hero,
   Navbar,
   Skills,
   Tech,
-  Works,
+  Works
 } from "./components";
 
 const App = () => (
@@ -23,13 +25,15 @@ const App = () => (
       <Skills />
       <Tech />
       <Works />
-      <div className="relative z-0">
+      <CurveText />
+      <section className="relative z-0">
         <Contact />
-      </div>
-      <footer className="border-t-[2px] border-gray-800 relative">
-        <Footer />
-        <BackToTop />
-      </footer>
+        <Aurora />
+        <footer className="relative">
+          <Footer />
+          <BackToTop />
+        </footer>
+      </section>
     </div>
   </>
 )

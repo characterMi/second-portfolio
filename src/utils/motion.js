@@ -1,16 +1,15 @@
 export const heroHeadTextAnimation = {
   initial: {
     scaleY: 0,
-    rotateX: 45,
     opacity: 0,
   },
   start: {
     scaleY: 1,
-    rotateX: 0,
     opacity: 1,
     transition: {
       duration: 1,
       type: "spring",
+      delay: 0.5,
     },
   },
 };
@@ -24,7 +23,7 @@ export const heroSubTextAnimation = {
     transition: {
       duration: 0.75,
       type: "spring",
-      delay: 1 + index * 0.1,
+      delay: 1.5 + index * 0.1,
     },
   }),
 };
@@ -33,15 +32,20 @@ export const zoomIn = {
   initial: {
     scale: 0,
   },
-  start: {
+  start: (delay) => ({
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 1,
       type: "spring",
+      delay,
     },
-  },
+  }),
   exit: {
     scale: 0,
+    transition: {
+      duration: 1,
+      type: "spring",
+    },
   },
 };
 
@@ -50,18 +54,46 @@ export const increaseHeight = {
     opacity: 0,
     scaleY: 0,
   },
-  start: {
+  start: (delay) => ({
     opacity: 1,
     scaleY: 1,
     transition: {
       duration: 0.75,
       type: "spring",
-      delay: 0.3,
+      delay: delay || 0.3,
     },
-  },
-  exit: {
+  }),
+  exit: (delay) => ({
     opacity: 0,
     scaleY: 0,
+    transition: {
+      duration: 0.75,
+      type: "spring",
+      delay: delay || 0.3,
+    },
+  }),
+};
+
+export const serviceCardsAnimation = {
+  initial: {
+    opacity: 0,
+    rotateZ: 90,
+    scaleX: 0,
+  },
+  enter: (delay) => ({
+    opacity: 1,
+    rotateZ: 0,
+    scaleX: 1,
+    transition: {
+      duration: 0.75,
+      type: "spring",
+      delay,
+    },
+  }),
+  exit: {
+    opacity: 0,
+    rotateZ: 90,
+    scaleX: 0,
   },
 };
 
@@ -150,7 +182,7 @@ export const navBarSlideIn = {
     transition: {
       duration: 0.75,
       type: "spring",
-      delay: 0.5,
+      delay: 2.7,
       stiffness: 350,
       damping: 10,
       mass: 0.5,
