@@ -25,6 +25,7 @@ const EarthCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 3}
           minPolarAngle={Math.PI / 3}
+          enableDamping={false}
         />
         <Earth />
         <Stars />

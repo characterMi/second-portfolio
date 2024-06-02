@@ -76,13 +76,9 @@ export const increaseHeight = {
 
 export const serviceCardsAnimation = {
   initial: {
-    opacity: 0,
-    rotateZ: 90,
     scaleX: 0,
   },
   enter: (delay) => ({
-    opacity: 1,
-    rotateZ: 0,
     scaleX: 1,
     transition: {
       duration: 0.75,
@@ -91,8 +87,6 @@ export const serviceCardsAnimation = {
     },
   }),
   exit: {
-    opacity: 0,
-    rotateZ: 90,
     scaleX: 0,
   },
 };

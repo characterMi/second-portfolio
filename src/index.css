@@ -128,6 +128,8 @@ body {
   background: #00cea8;
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  animation: green-pink-gradient 10s linear infinite;
+  -webkit-animation: green-pink-gradient 10s linear infinite;
 }
 
 .orange-text-gradient {
@@ -218,6 +220,22 @@ body {
 .alert_box_animation {
   animation: alert_box_animation 8s ease;
   -webkit-animation: alert_box_animation 8s ease;
+}
+
+@keyframes green-pink-gradient {
+  50% {
+    filter: hue-rotate(350deg);
+    -webkit-filter: hue-rotate(350deg);
+    -ms-filter: hue-rotate(350deg);
+  }
+}
+
+@-webkit-keyframes green-pink-gradient {
+  50% {
+    filter: hue-rotate(350deg);
+    -webkit-filter: hue-rotate(350deg);
+    -ms-filter: hue-rotate(350deg);
+  }
 }
 
 @-webkit-keyframes spin {

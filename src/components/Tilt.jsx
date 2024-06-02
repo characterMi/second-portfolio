@@ -35,7 +35,7 @@ const Tilt = ({ title, icon, index }) => {
 
     return (
         <motion.div
-            className="relative w-full rounded-xl green-pink-gradient shadow-card min-h-[280px] cursor-pointer"
+            className="relative w-full rounded-xl shadow-card min-h-[280px] cursor-pointer"
             style={{
                 transformStyle: "preserve-3d",
                 rotateX,
@@ -49,10 +49,11 @@ const Tilt = ({ title, icon, index }) => {
             whileInView="enter"
             exit="exit"
         >
+            <div className="absolute top-0 left-0 w-full h-full green-pink-gradient rounded-xl" />
+
             <div
                 className="absolute inset-[2px] rounded-xl bg-tertiary shadow-lg py-5 px-12 flex justify-evenly items-center flex-col"
                 style={{
-                    perspective: "120px",
                     transform: "translateZ(25px)",
                     transformStyle: "preserve-3d",
                 }}

@@ -1,7 +1,7 @@
 import { animate, motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 
-const COLORS = ["#151030", "#0b052c", "#0b3526", "#001e46", "#382038", "#360c16", "#3f0513"];
+const COLORS = ["#1c1446", "#032c44", "#0c4733", "#00285c", "#4e2c4e", "#460d1a", "#3b2803"];
 
 const Aurora = () => {
     const color = useMotionValue(COLORS[0])

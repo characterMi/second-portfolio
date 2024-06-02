@@ -7,7 +7,7 @@ const CurveText = () => {
 
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ['start end', "start start"]
+        offset: ['start end', "start -0.2"]
     })
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const CurveText = () => {
 
     return (
         <div ref={ref} className="block md:hidden">
-            <svg viewBox="0 0 250 90">
+            <svg viewBox="0 0 250 90" className="fill-primary">
                 <path id="path" d="m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68" />
                 <text className="text-[9px] fill-secondary uppercase">
                     {[...Array(3)].map((_, i) => (
