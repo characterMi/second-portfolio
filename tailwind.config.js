@@ -14,7 +14,7 @@ module.exports = {
       },
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
-        alert: "10px 10px 50px 10px #0b081a"
+        alert: "10px 10px 50px 10px #0b081a",
       },
       screens: {
         xs: "450px",

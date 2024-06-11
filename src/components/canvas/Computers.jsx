@@ -1,13 +1,13 @@
 import {
   Html,
   PresentationControls,
-  Text,
+  Text3D,
   useGLTF
 } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 
-import Font from "/Caveat-Bold.ttf";
+import jsonFont from "../../assets/font.json";
 
 import CanvasLoader from "../Loader";
 
@@ -55,14 +55,32 @@ const Computer = ({ isMobile }) => {
           </Html>
         </primitive>
         {/* Text (Abolfazl) */}
-        <Text
-          font={Font}
-          fontSize={isMobile ? 0.2 : 0.4}
-          position={isMobile ? [0.8, -0.3, -0.1] : [1.1, -0.4, 0.3]}
+        <Text3D
+          font={jsonFont}
+          scale={isMobile ? 0.15 : 0.3}
+          position={isMobile ? [0.8, -0.3, -0.5] : [1.1, -0.35, -0.6]}
           rotation-y={-1.5}
-          children={"ABOLFAZL\nTAGHADOSI"}
           textAlign="center"
-        />
+          receiveShadow
+          castShadow
+        >
+          {"ABOLFAZL\nTAGHADOSI"}
+          <meshBasicMaterial color="#d8d8d8" />
+        </Text3D>
+
+        <Text3D
+          font={jsonFont}
+          scale={isMobile ? 0.08 : 0.1}
+          position={isMobile ? [0.8, 0, -0.3] : [1.1, 0.1, -0.1]}
+          rotation-y={-1.5}
+          textAlign="center"
+          color="#56ccf2"
+          receiveShadow
+          castShadow
+        >
+          #opentowork
+          <meshBasicMaterial color="#56ccf2" />
+        </Text3D>
       </PresentationControls>
     </>
   );

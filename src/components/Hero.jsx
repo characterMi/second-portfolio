@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { styles } from "../style";
-import { heroHeadTextAnimation, heroSubTextAnimation, increaseHeight, zoomIn } from "../utils/motion";
+import { expandAnimation, heroHeadTextAnimation, heroSubTextAnimation, increaseHeight, zoomIn } from "../utils/motion";
 import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
-  const heroSubText = "I develop 3D visuals, user interfaces and web  applications"
+  const heroSubText = "I develop 3D visuals, user interfaces and web applications"
 
   return (
     <section className="relative w-full h-screen mx-auto">
@@ -43,29 +43,29 @@ const Hero = () => {
         <ComputersCanvas />
       </motion.section>
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
+      <a className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center gap-x-2" href="#about">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 3.5,
+            duration: 1,
+          }}
+          className="w-[25px] h-[54px] rounded-3xl border-4 border-secondary flex justify-center items-start p-1"
+        >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ y: [0, 28, 0] }}
             transition={{
-              delay: 3.5,
-              duration: 1,
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
             }}
-            className="w-[25px] h-[54px] rounded-3xl border-4 border-secondary flex justify-center items-start p-1"
-          >
-            <motion.div
-              animate={{ y: [0, 28, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-2 h-2 rounded-full bg-secondary mb-10"
-            />
-          </motion.div>
-        </a>
-      </div>
+            className="w-2 h-2 rounded-full bg-secondary mb-10"
+          />
+        </motion.div>
+
+        <motion.h5 className="text-secondary text-lg font-black origin-left" variants={expandAnimation} initial="initial" animate="enter" exit="exit" custom={4}>Click to scroll</motion.h5>
+      </a>
     </section>
   );
 };

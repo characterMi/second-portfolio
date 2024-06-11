@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { serviceCardsAnimation } from "../utils/motion";
+import { expandAnimation } from "../utils/motion";
 
 const Tilt = ({ title, icon, index }) => {
     const rotation = {
@@ -43,7 +43,7 @@ const Tilt = ({ title, icon, index }) => {
             }}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            variants={serviceCardsAnimation}
+            variants={expandAnimation}
             custom={index * 0.1}
             initial="initial"
             whileInView="enter"
@@ -58,9 +58,9 @@ const Tilt = ({ title, icon, index }) => {
                     transformStyle: "preserve-3d",
                 }}
             >
-                <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+                <img src={icon} alt={title} className="w-16 h-16 object-contain" style={{ transform: "translateZ(50px)" }} />
 
-                <h3 className="text-white text-[20px] font-bold text-center">
+                <h3 className="text-white text-[20px] font-bold text-center green-pink-text-gradient" style={{ transform: "translateZ(50px)" }}>
                     {title}
                 </h3>
             </div>

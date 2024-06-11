@@ -74,7 +74,7 @@ export const increaseHeight = {
   }),
 };
 
-export const serviceCardsAnimation = {
+export const expandAnimation = {
   initial: {
     scaleX: 0,
   },

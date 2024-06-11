@@ -9,18 +9,24 @@ const Footer = () => {
     e.target.nextElementSibling?.classList.add("font-extrabold")
     e.target.nextElementSibling?.nextElementSibling?.classList.add("font-bold")
     e.target.nextElementSibling?.nextElementSibling?.nextElementSibling?.classList.add("font-medium")
+    e.target.nextElementSibling?.nextElementSibling?.nextElementSibling?.nextElementSibling?.classList.add("font-normal")
     e.target.previousElementSibling?.classList.add("font-extrabold")
     e.target.previousElementSibling?.previousElementSibling?.classList.add("font-bold")
     e.target.previousElementSibling?.previousElementSibling?.previousElementSibling?.classList.add("font-medium")
+    e.target.previousElementSibling?.previousElementSibling?.previousElementSibling?.previousElementSibling?.classList.add("font-normal")
+
   }
+
   const handleMouseLeave = (e) => {
     e.target.classList.remove("font-black")
     e.target.nextElementSibling?.classList.remove("font-extrabold")
     e.target.nextElementSibling?.nextElementSibling?.classList.remove("font-bold")
     e.target.nextElementSibling?.nextElementSibling?.nextElementSibling?.classList.remove("font-medium")
+    e.target.nextElementSibling?.nextElementSibling?.nextElementSibling?.nextElementSibling?.classList.remove("font-normal")
     e.target.previousElementSibling?.classList.remove("font-extrabold")
     e.target.previousElementSibling?.previousElementSibling?.classList.remove("font-bold")
     e.target.previousElementSibling?.previousElementSibling?.previousElementSibling?.classList.remove("font-medium")
+    e.target.previousElementSibling?.previousElementSibling?.previousElementSibling?.previousElementSibling?.classList.remove("font-normal")
   }
 
   useEffect(() => {
