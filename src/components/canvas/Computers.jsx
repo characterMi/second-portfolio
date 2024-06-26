@@ -14,12 +14,12 @@ import CanvasLoader from "../Loader";
 const Lights = () => (
   <>
     <ambientLight intensity={3} />
-    <spotLight intensity={1} position={[1.8, 0.5, -1.5]} />
+    <pointLight args={[0xaaa6c3, 4]} position={[0.4, 0, -0.8]} />
   </>
 )
 
-const Computer = ({ isMobile }) => {
-  const { scene } = useGLTF("/second-portfolio/mac_book/model.gltf");
+const Computer = ({ isMobile, ...props }) => {
+  const { nodes, materials } = useGLTF("/second-portfolio/mac_book/model.glb");
   const [isLoading, setIsLoading] = useState(true)
 
   return (
@@ -34,52 +34,53 @@ const Computer = ({ isMobile }) => {
         snap={{ mass: 4, tension: 400 }}
       >
         {/* Object */}
-        <primitive
-          scale={isMobile ? 0.4 : 0.6}
-          object={scene}
-          position={isMobile ? [0.1, -0.9, 0] : [0.2, -1.4, 0]}
-        >
-          <Html
-            transform
-            distanceFactor={1.17}
-            position={[0, 1.56, -1.4]}
-            rotation-x={-0.256}
+        <group {...props} dispose={null}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Macbook.geometry}
+            material={materials.PaletteMaterial001}
+            position={isMobile ? [0.3, -0.5, -0.36] : [0, -0.5, -0.285]}
+            scale={isMobile ? 0.7 : 0.95}
           >
-            <iframe
-              className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
-              style={{ display: isLoading ? "none" : "block" }}
-              src="https://charactermi.github.io/portfolio"
-              onLoad={() => setIsLoading(false)}
-            />
-            {isLoading && <p className="text-4xl rotate-2">Loading the website...</p>}
-          </Html>
-        </primitive>
-        {/* Text (Abolfazl) */}
+            <Html
+              transform
+              distanceFactor={0.74}
+              position={isMobile ? [-0.003, 0.07, -0.7] : [-0.006, 0.05, -0.71]}
+              rotation-x={-0.256}
+            >
+              <iframe
+                className="w-[1024px] h-[690px] border-none rounded-[20px] bg-black"
+                style={{ display: isLoading ? "none" : "block" }}
+                src="https://charactermi.github.io/portfolio"
+                onLoad={() => setIsLoading(false)}
+              />
+              {isLoading && <p className="text-4xl rotate-2">Loading the website...</p>}
+            </Html>
+          </mesh>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.Top.geometry}
+            material={materials.PaletteMaterial001}
+            position={isMobile ? [0.301, -0.45, -0.85] : [0.001, -0.45, -0.945]}
+            rotation={[1.311, 0, 0]}
+            scale={isMobile ? 0.7 : 0.95}
+          />
+        </group>
+        {/* Text (#opentowork) */}
         <Text3D
           font={jsonFont}
-          scale={isMobile ? 0.15 : 0.3}
-          position={isMobile ? [0.8, -0.3, -0.5] : [1.1, -0.35, -0.6]}
+          scale={isMobile ? 0.15 : 0.25}
+          position={isMobile ? [1, -0.5, -0.7] : [1.1, -0.6, -0.9]}
           rotation-y={-1.5}
           textAlign="center"
-          receiveShadow
-          castShadow
-        >
-          {"ABOLFAZL\nTAGHADOSI"}
-          <meshBasicMaterial color="#d8d8d8" />
-        </Text3D>
-
-        <Text3D
-          font={jsonFont}
-          scale={isMobile ? 0.08 : 0.1}
-          position={isMobile ? [0.8, 0, -0.3] : [1.1, 0.1, -0.1]}
-          rotation-y={-1.5}
-          textAlign="center"
-          color="#56ccf2"
+          color="#aaa6c3"
           receiveShadow
           castShadow
         >
           #opentowork
-          <meshBasicMaterial color="#56ccf2" />
+          <meshBasicMaterial color="#aaa6c3" />
         </Text3D>
       </PresentationControls>
     </>
@@ -109,6 +110,7 @@ const ComputersCanvas = () => {
       camera={{ position: [-2, 0.9, 3], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
       className="touch-none"
+      dpr={[1, 2]}
     >
       <Suspense fallback={<CanvasLoader />}>
         <Lights />
@@ -118,6 +120,6 @@ const ComputersCanvas = () => {
   );
 };
 
-useGLTF.preload("/second-portfolio/mac_book/model.gltf")
+useGLTF.preload("/second-portfolio/mac_book/model.glb")
 
 export default ComputersCanvas;

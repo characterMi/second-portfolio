@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 import { logo } from "../assets";
 import { navLinks } from "../constants";
 import { styles } from "../style";
@@ -7,12 +8,27 @@ import Magnetic from "./Magnetic";
 import MobileSidebar from "./MobileSidebar";
 
 const Navbar = () => {
+  const { scrollY } = useScroll()
+  const [isHidden, setIsHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > window.innerHeight) {
+      setIsHidden(true)
+    } else {
+      setIsHidden(false)
+    }
+  })
+
   return (
     <motion.nav
-      className={`${styles.paddingX} w-full flex items-center py-5 bg-primary/90 backdrop-blur-sm fixed top-0 left-0 z-[100000000]`}
+      className={`${styles.paddingX} w-full flex items-center py-5 bg-primary/90 backdrop-blur-sm fixed top-0 left-0 z-[100000000] transition`}
       initial="initial"
       animate="enter"
       variants={navBarSlideIn}
+      style={{
+        translateY: isHidden ? "-100%" : 0,
+      }}
     >
       <div className="w-full flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center gap-2">

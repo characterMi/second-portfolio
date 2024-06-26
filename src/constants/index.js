@@ -6,7 +6,6 @@ import {
   creative_developer,
   css,
   designwave,
-  docker,
   film_hub,
   git,
   github,
@@ -124,10 +123,6 @@ const technologies = [
   {
     name: "Three JS",
     icon: threejs,
-  },
-  {
-    name: "Docker",
-    icon: docker,
   },
   {
     name: "PWA",

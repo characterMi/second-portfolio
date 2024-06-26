@@ -43,7 +43,7 @@ const Hero = () => {
         <ComputersCanvas />
       </motion.section>
 
-      <a className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center gap-x-2" href="#about">
+      <a className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center gap-x-2 focus:-translate-y-2" href="#about">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

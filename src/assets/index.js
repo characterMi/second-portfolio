@@ -13,7 +13,6 @@ import bootstrap from "./tech/bootstrap.svg";
 import css from "./tech/css.svg";
 import git from "./tech/git.svg";
 import html from "./tech/html.svg";
-import docker from "./tech/icons8-docker.svg";
 import javascript from "./tech/js.svg";
 import mui from "./tech/mui.svg";
 import next from "./tech/nextjs.svg";
@@ -54,7 +53,6 @@ export {
   creative_developer,
   css,
   designwave,
-  docker,
   film_hub,
   git,
   github,

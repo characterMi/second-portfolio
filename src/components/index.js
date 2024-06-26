@@ -6,6 +6,7 @@ import Contact from "./Contact";
 import CurveText from "./CurveText";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import Meteor from "./Meteor";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
 import Tech from "./Tech";
@@ -25,6 +26,7 @@ export {
   EarthCanvas,
   Footer,
   Hero,
+  Meteor,
   Navbar,
   Skills,
   Tech,

@@ -1,24 +1,47 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Suspense, memo } from "react";
 import CanvasLoader from "../Loader";
 import { Stars } from "./Stars";
 
 
-const Earth = () => {
-  const earth = useGLTF("/second-portfolio/planet/scene.glb");
+const Earth = (props) => {
+  const { nodes, materials } = useGLTF("/second-portfolio/planet/scene.glb");
 
   return (
-    <primitive object={earth.scene} scale={2.5} />
+    <group {...props} dispose={null}>
+      <group name="Sketchfab_Scene">
+        <group name="GLTF_SceneRootNode" rotation={[0.031, 0, 0.064]}>
+          <group name="Clouds_1">
+            <mesh
+              name="Object_4"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_4.geometry}
+              material={materials.Clouds}
+            />
+          </group>
+          <group name="Planet_2">
+            <mesh
+              name="Object_6"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_6.geometry}
+              material={materials.Planet}
+            />
+          </group>
+        </group>
+      </group>
+    </group>
   );
 };
 
-const EarthCanvas = () => {
+const EarthRenderer = () => {
   return (
     <Canvas
       shadows
       gl={{ preserveDrawingBuffer: true }}
-      camera={{ position: [0, 0, 5.5] }}
+      camera={{ position: [0, 0, 2.3] }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -26,7 +49,7 @@ const EarthCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 3}
           minPolarAngle={Math.PI / 3}
-          enableDamping={false}
+          enablePan={false}
         />
         <Earth />
         <Stars />
@@ -36,5 +59,7 @@ const EarthCanvas = () => {
 };
 
 useGLTF.preload("/second-portfolio/planet/scene.glb")
+
+const EarthCanvas = memo(EarthRenderer)
 
 export default EarthCanvas;

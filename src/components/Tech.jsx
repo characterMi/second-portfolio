@@ -12,7 +12,11 @@ const Tech = () => {
           key={index}
           style={{
             perspective: "120px",
-            perspectiveOrigin: "top"
+            WebkitPerspective: "120px",
+            MozPerspective: "120px",
+            perspectiveOrigin: "top",
+            WebkitPerspectiveOrigin: "top",
+            MozPerspectiveOrigin: "top",
           }}
         >
           <motion.div

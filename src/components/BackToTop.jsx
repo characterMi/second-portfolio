@@ -3,7 +3,7 @@ import { arrow } from "../assets";
 const BackToTop = () => (
   <div className="absolute top-[10px] right-[15px] hover:scale-105 transition">
     <button
-      className="hidden sm:block border border-tertiary px-[10px] py-[5px] rounded font-bold bg-tertiary/20"
+      className="hidden sm:block border border-tertiary px-[10px] py-[5px] rounded font-bold bg-tertiary/20 focus:scale-105"
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
@@ -11,7 +11,7 @@ const BackToTop = () => (
       Back to top
     </button>
     <button
-      className="block sm:hidden rounded font-bold border border-tertiary"
+      className="block sm:hidden rounded font-bold border border-tertiary focus:scale-105"
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}

@@ -38,6 +38,8 @@ const Tilt = ({ title, icon, index }) => {
             className="relative w-full rounded-xl shadow-card min-h-[280px] cursor-pointer"
             style={{
                 transformStyle: "preserve-3d",
+                WebkitTransformStyle: "preserve-3d",
+                MozTransformStyle: "preserve-3d",
                 rotateX,
                 rotateY,
             }}
@@ -55,12 +57,35 @@ const Tilt = ({ title, icon, index }) => {
                 className="absolute inset-[2px] rounded-xl bg-tertiary shadow-lg py-5 px-12 flex justify-evenly items-center flex-col"
                 style={{
                     transform: "translateZ(25px)",
+                    WebkitTransform: "translateZ(25px)",
+                    msTransform: "translateZ(25px)",
+                    MozTransform: "translateZ(25px)",
                     transformStyle: "preserve-3d",
+                    WebkitTransformStyle: "preserve-3d",
+                    MozTransformStyle: "preserve-3d",
                 }}
             >
-                <img src={icon} alt={title} className="w-16 h-16 object-contain" style={{ transform: "translateZ(50px)" }} />
+                <img
+                    src={icon}
+                    alt={title}
+                    className="w-16 h-16 object-contain"
+                    style={{
+                        transform: "translateZ(50px)",
+                        WebkitTransform: "translateZ(50px)",
+                        msTransform: "translateZ(50px)",
+                        MozTransform: "translateZ(50px)",
+                    }}
+                />
 
-                <h3 className="text-white text-[20px] font-bold text-center green-pink-text-gradient" style={{ transform: "translateZ(50px)" }}>
+                <h3
+                    className="text-white text-[20px] font-bold text-center green-pink-text-gradient"
+                    style={{
+                        transform: "translateZ(50px)",
+                        WebkitTransform: "translateZ(50px)",
+                        msTransform: "translateZ(50px)",
+                        MozTransform: "translateZ(50px)",
+                    }}
+                >
                     {title}
                 </h3>
             </div>

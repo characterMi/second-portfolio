@@ -13,12 +13,12 @@ export const Stars = (props) => {
   });
 
   return (
-    <group rotation={[0, 0, -1.1]} scale={3}>
+    <group rotation={[0, 0, -1.1]} scale={1.3}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
           color="#f272c8"
-          size={0.04}
+          size={0.013}
           sizeAttenuation={true}
           depthWrite={false}
         />

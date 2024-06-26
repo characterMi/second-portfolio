@@ -85,36 +85,39 @@ const Contact = () => {
       >
         <CharacterAnimation text="Get in touch" textStyle="sectionSubText" />
         <CharacterAnimation text="Contact." textStyle="sectionHeadText" />
-        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <label className="flex flex-col">
+        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8" autoComplete="off">
+          <label className="flex flex-col relative contact-form__label">
             <span className="text-white font-medium mb-4">Your Name ?</span>
+            <div aria-hidden className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300" />
             <input
               type="text"
               name="name"
               placeholder="What's your name ?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium "
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
               value={form.name}
               onChange={handleChange}
             />
           </label>
-          <label className="flex flex-col">
+          <label className="flex flex-col relative contact-form__label">
             <span className="text-white font-medium mb-4">Your Email ?</span>
+            <div aria-hidden className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300" />
             <input
               type="email"
               name="email"
               placeholder="What's your email ?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium "
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
               value={form.email}
               onChange={handleChange}
             />
           </label>
-          <label className="flex flex-col">
+          <label className="flex flex-col relative contact-form__label">
             <span className="text-white font-medium mb-4">Your Message ?</span>
+            <div aria-hidden className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300" />
             <textarea
               rows="7"
               name="message"
               placeholder="What do you want to say ?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium "
+              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
               value={form.message}
               onChange={handleChange}
             />
@@ -122,7 +125,7 @@ const Contact = () => {
           <div className="flex justify-between items-center">
             <button
               type="submit"
-              className="py-3 px-8 outlined-none w-fit bg-tertiary text-white font-bold shadow-md shadow-primary rounded-md disabled:opacity-50"
+              className="py-3 px-8 outlined-none w-fit bg-tertiary text-white font-bold shadow-md shadow-primary rounded-md disabled:opacity-50 focus:scale-95"
               ref={button_ref}
             >
               {loading ? "Sending ..." : "Send"}
@@ -131,7 +134,7 @@ const Contact = () => {
               {socials.map((social) => (
                 <a
                   href={social.link}
-                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full relative ${social.title === "Git hub" && "after:bg-white after:w-[78%] after:h-[78%] after:absolute after:rounded-full after:top-1/2 after:-translate-x-1/2 after:left-1/2 after:-translate-y-1/2 after:-z-[1]"}`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full relative focus:-translate-y-1 ${social.title === "Git hub" && "after:bg-white after:w-[78%] after:h-[78%] after:absolute after:rounded-full after:top-1/2 after:-translate-x-1/2 after:left-1/2 after:-translate-y-1/2 after:-z-[1]"}`}
                   key={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
