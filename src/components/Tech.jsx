@@ -27,7 +27,15 @@ const Tech = () => {
             exit="exit"
             custom={index}
           >
-            <img src={technology.icon} alt={technology.name} />
+            <img
+              src={technology.icon}
+              alt={technology.name}
+              style={{
+                filter: `drop-shadow(0 15px 10px ${technology.shadow})`,
+                msFilter: `drop-shadow(0 15px 10px ${technology.shadow})`,
+                WebkitFilter: `drop-shadow(0 15px 10px ${technology?.shadow})`,
+              }}
+            />
           </motion.div>
         </div>
       ))}

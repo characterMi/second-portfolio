@@ -5,7 +5,6 @@ import nextjs_developer from "./nextjs_developer.png";
 import react_developer from "./react_developer.png";
 import web_developer from "./web_developer.png";
 
-import close from "./close.svg";
 import github from "./github.svg";
 import website from "./website.svg";
 
@@ -13,6 +12,7 @@ import bootstrap from "./tech/bootstrap.svg";
 import css from "./tech/css.svg";
 import git from "./tech/git.svg";
 import html from "./tech/html.svg";
+import jest from "./tech/jest.svg";
 import javascript from "./tech/js.svg";
 import mui from "./tech/mui.svg";
 import next from "./tech/nextjs.svg";
@@ -48,7 +48,6 @@ export {
   atb_media,
   bootstrap,
   car_game,
-  close,
   coca_cola,
   creative_developer,
   css,
@@ -60,6 +59,7 @@ export {
   heart,
   html,
   javascript,
+  jest,
   lingo,
   linkedin,
   logo,

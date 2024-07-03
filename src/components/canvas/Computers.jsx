@@ -20,7 +20,7 @@ const Lights = () => (
 
 const Computer = ({ isMobile, ...props }) => {
   const { nodes, materials } = useGLTF("/second-portfolio/mac_book/model.glb");
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
@@ -36,8 +36,6 @@ const Computer = ({ isMobile, ...props }) => {
         {/* Object */}
         <group {...props} dispose={null}>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Macbook.geometry}
             material={materials.PaletteMaterial001}
             position={isMobile ? [0.3, -0.5, -0.36] : [0, -0.5, -0.285]}
@@ -59,8 +57,6 @@ const Computer = ({ isMobile, ...props }) => {
             </Html>
           </mesh>
           <mesh
-            castShadow
-            receiveShadow
             geometry={nodes.Top.geometry}
             material={materials.PaletteMaterial001}
             position={isMobile ? [0.301, -0.45, -0.85] : [0.001, -0.45, -0.945]}
@@ -89,6 +85,7 @@ const Computer = ({ isMobile, ...props }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 650px)");
     setIsMobile(mediaQuery.matches);
@@ -110,7 +107,6 @@ const ComputersCanvas = () => {
       camera={{ position: [-2, 0.9, 3], fov: 50 }}
       gl={{ preserveDrawingBuffer: true }}
       className="touch-none"
-      dpr={[1, 2]}
     >
       <Suspense fallback={<CanvasLoader />}>
         <Lights />

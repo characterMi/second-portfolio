@@ -10,10 +10,11 @@ import MobileSidebar from "./MobileSidebar";
 const Navbar = () => {
   const { scrollY } = useScroll()
   const [isHidden, setIsHidden] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    if (latest > previous && latest > window.innerHeight) {
+    if (latest > previous && latest > window.innerHeight && !toggle) {
       setIsHidden(true)
     } else {
       setIsHidden(false)
@@ -49,7 +50,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <MobileSidebar />
+        <MobileSidebar toggle={toggle} setToggle={setToggle} />
 
       </div>
     </motion.nav>

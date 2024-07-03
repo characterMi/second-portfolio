@@ -12,6 +12,7 @@ import {
   gym_lovers,
   html,
   javascript,
+  jest,
   lingo,
   linkedin,
   marblerace,
@@ -75,38 +76,52 @@ const technologies = [
   {
     name: "HTML 5",
     icon: html,
+    shadow: "#e65100b7",
   },
   {
     name: "CSS 3",
     icon: css,
+    shadow: "#0277bdb7",
   },
   {
     name: "Sass",
     icon: sass,
+    shadow: "#f06292",
   },
   {
     name: "JavaScript",
     icon: javascript,
+    shadow: "#ffde39b7",
   },
   {
     name: "TypeScript",
     icon: typescript,
+    shadow: "#1976d2b7",
   },
   {
     name: "React JS",
     icon: reactjs,
+    shadow: "#80deea",
   },
   {
     name: "Next JS",
     icon: next,
+    shadow: "#212121b7",
   },
   {
     name: "Redux Toolkit",
     icon: redux,
+    shadow: "#7e57c2",
   },
   {
     name: "MUI",
     icon: mui,
+    shadow: "#0288d1b7",
+  },
+  {
+    name: "Jest",
+    icon: jest,
+    shadow: "#9a425bb7",
   },
   {
     name: "React-Query",
@@ -115,22 +130,27 @@ const technologies = [
   {
     name: "Tailwind CSS",
     icon: tailwind,
+    shadow: "#00acc1b7",
   },
   {
     name: "Bootstrap",
     icon: bootstrap,
+    shadow: "#6c19ffb7",
   },
   {
     name: "Three JS",
     icon: threejs,
+    shadow: "#000000",
   },
   {
     name: "PWA",
     icon: pwa,
+    shadow: "#5a0fc8b7",
   },
   {
     name: "git",
     icon: git,
+    shadow: "#e65100b7",
   },
 ];
 
