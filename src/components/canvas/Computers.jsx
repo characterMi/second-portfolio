@@ -9,7 +9,7 @@ import { Suspense, useEffect, useState } from "react";
 
 import jsonFont from "../../assets/font.json";
 
-import CanvasLoader from "../Loader";
+import CanvasLoader from "./CanvasLoader";
 
 const Lights = () => (
   <>
@@ -52,6 +52,7 @@ const Computer = ({ isMobile, ...props }) => {
                 style={{ display: isLoading ? "none" : "block" }}
                 src="https://charactermi.github.io/portfolio"
                 onLoad={() => setIsLoading(false)}
+                title="Abolfazl taghadosi's portfolio (html css only)"
               />
               {isLoading && <p className="text-4xl rotate-2">Loading the website...</p>}
             </Html>

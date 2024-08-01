@@ -23,7 +23,7 @@ export const heroSubTextAnimation = {
     transition: {
       duration: 0.75,
       type: "spring",
-      delay: 1.5 + index * 0.1,
+      delay: 1.5 + index * 0.05,
     },
   }),
 };

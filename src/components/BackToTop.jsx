@@ -16,7 +16,7 @@ const BackToTop = () => (
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
-      <img className="w-[30px] h-[30px]" src={arrow} alt="Back to top" />
+      <img className="w-[30px] h-[30px]" src={arrow} alt="Back to top" loading="lazy" />
     </button>
   </div>
 );

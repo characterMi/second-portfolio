@@ -75,9 +75,10 @@ const Tilt = ({ title, icon, index }) => {
                         msTransform: "translateZ(50px)",
                         MozTransform: "translateZ(50px)",
                     }}
+                    loading="eager"
                 />
 
-                <h3
+                <h2
                     className="text-white text-[20px] font-bold text-center green-pink-text-gradient"
                     style={{
                         transform: "translateZ(50px)",
@@ -87,7 +88,7 @@ const Tilt = ({ title, icon, index }) => {
                     }}
                 >
                     {title}
-                </h3>
+                </h2>
             </div>
         </motion.div>
     )

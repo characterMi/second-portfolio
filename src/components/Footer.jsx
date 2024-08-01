@@ -52,6 +52,7 @@ const Footer = () => {
           src={heart}
           alt="Love"
           className="w-[30px] h-[30px] object-contain"
+          loading="lazy"
         />{" "}
         by
         <p className="ml-1 flex gap-x-[1px]">

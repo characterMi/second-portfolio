@@ -35,6 +35,7 @@ const Tech = () => {
                 msFilter: `drop-shadow(0 15px 10px ${technology.shadow})`,
                 WebkitFilter: `drop-shadow(0 15px 10px ${technology?.shadow})`,
               }}
+              loading='lazy'
             />
           </motion.div>
         </div>

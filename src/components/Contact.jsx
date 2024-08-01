@@ -143,6 +143,7 @@ const Contact = () => {
                     alt={social.title}
                     className="object-contain"
                     src={social.image}
+                    loading="lazy"
                   />
                 </a>
               ))}

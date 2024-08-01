@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <div className="w-full flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          <img src={logo} alt="logo" className="w-9 h-9 object-contain" loading="eager" />
           <p className="text-white text-[18px] font-bold cursor-pointer">
             <span className="text-[#ED1703] text-[22px]">A</span>bolfazl
           </p>

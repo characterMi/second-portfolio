@@ -64,7 +64,7 @@ const Hero = () => {
           />
         </motion.div>
 
-        <motion.h5 className="text-secondary text-lg font-black origin-left" variants={expandAnimation} initial="initial" animate="enter" exit="exit" custom={4}>Click to scroll</motion.h5>
+        <motion.p className="text-secondary text-lg font-black origin-left" variants={expandAnimation} initial="initial" animate="enter" exit="exit" custom={4}>Click to scroll</motion.p>
       </a>
     </section>
   );

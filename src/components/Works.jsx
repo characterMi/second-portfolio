@@ -32,6 +32,7 @@ const ProjectCard = ({
             src={image}
             alt={name}
             className="w-full h-auto object-cover rounded-2xl"
+            loading="lazy"
           />
           <div className="absolute inset-0 gap-2 flex m-1 card-img_hover justify-end">
             <div
@@ -42,6 +43,7 @@ const ProjectCard = ({
                 src={website}
                 alt="Live"
                 className="w-1/2 h-1/2 object-contain z-[1]"
+                loading="eager"
               />
             </div>
             <div
@@ -52,6 +54,7 @@ const ProjectCard = ({
                 src={github}
                 alt="Github"
                 className="w-2/3 h-2/3 object-contain z-[1]"
+                loading="eager"
               />
             </div>
           </div>
@@ -72,6 +75,7 @@ const ProjectCard = ({
               } `}
             alt="drop_down"
             onClick={() => setActive((prev) => prev === name ? "none" : name)}
+            loading="eager"
           />
         </div>
         <div className="mt-5 flex flex-wrap gap-2">

@@ -93,13 +93,13 @@ const Skill = ({ title, languages_name, icon, iconBg, date, index }) => {
                 whileInView={fadeInVisible("spring", 0.5 + index * 0.05, 0.75)}
             >
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
-                <h5 className="text-secondary">{languages_name}</h5>
-                <h6 className="text-secondary text-sm mt-4 font-bold block min-[1170px]:hidden">{date}</h6>
+                <p className="text-secondary">{languages_name}</p>
+                <p className="text-secondary text-sm mt-4 font-bold block min-[1170px]:hidden">{date}</p>
                 <div className="border-8 border-secondary border-y-primary absolute top-1/3" style={returnStyle("arrow")} />
             </motion.div>
 
             <motion.div className="aspect-square w-16 rounded-full border-4 z-10 -mt-8 flex justify-center items-center relative whitespace-nowrap" style={{ backgroundColor: iconBg }} variants={zoomIn} custom={0.5} initial="initial" whileInView="start" exit="exit">
-                <img src={icon} alt={title} className="w-2/3 h-2/3 object-contain" />
+                <img src={icon} alt={title} className="w-2/3 h-2/3 object-contain" loading="eager" />
                 <div className="absolute" style={returnStyle("date")}>
                     {date}
                 </div>

@@ -1,7 +1,7 @@
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, memo } from "react";
-import CanvasLoader from "../Loader";
+import CanvasLoader from "./CanvasLoader";
 import { Stars } from "./Stars";
 
 
