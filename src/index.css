@@ -128,60 +128,6 @@ body {
   background: -webkit-linear-gradient(to top, #151030 1%, transparent 100%);
 }
 
-.lightblue-text-gradient {
-  background: #56ccf2;
-  background: -webkit-linear-gradient(to top, #5cd6ff, #b6edff);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#5cd6ff),
-    to(#b6edff)
-  );
-  background: -webkit-linear-gradient(bottom, #5cd6ff, #b6edff);
-  background: -moz-linear-gradient(bottom, #5cd6ff, #b6edff);
-  background: -o-linear-gradient(bottom, #5cd6ff, #b6edff);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#5cd6ff),
-    to(#b6edff)
-  );
-  background: linear-gradient(to top, #5cd6ff, #b6edff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.yellow-text-gradient {
-  background: #f2ef56;
-  background: -webkit-linear-gradient(to top, #61603c, #f2ef56, #61603c);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#61603c),
-    color-stop(#f2ef56),
-    to(#61603c)
-  );
-  background: -webkit-linear-gradient(bottom, #61603c, #f2ef56, #61603c);
-  background: -moz-linear-gradient(bottom, #61603c, #f2ef56, #61603c);
-  background: -o-linear-gradient(bottom, #61603c, #f2ef56, #61603c);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#61603c),
-    color-stop(#f2ef56),
-    to(#61603c)
-  );
-  background: linear-gradient(to top, #61603c, #f2ef56, #61603c);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .violet-gradient {
   background: #804dee;
   background: -webkit-gradient(
@@ -231,202 +177,123 @@ body {
   -webkit-animation: green-pink-gradient 10s linear infinite;
 }
 
+.lightblue-text-gradient {
+  color: #56ccf2;
+}
+
+.yellow-text-gradient {
+  color: #f2ef56;
+}
+
 .green-pink-text-gradient {
-  background: #00cea8;
-  background: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    color-stop(1.9%, #00cea8),
-    color-stop(97.5%, #bf61ff)
-  );
-  background: -webkit-linear-gradient(right, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -moz-linear-gradient(right, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -o-linear-gradient(right, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    color-stop(1.9%, #00cea8),
-    color-stop(97.5%, #bf61ff)
-  );
-  background: linear-gradient(to left, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-to left, #00cea8 1.9%, #bf61ff 97.5%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-animation: green-pink-text-gradient 10s linear infinite;
-  -o-animation: green-pink-text-gradient 10s linear infinite;
-  animation: green-pink-text-gradient 10s linear infinite;
-  -webkit-animation: green-pink-text-gradient 10s linear infinite;
+  color: #00cea8;
 }
 
 .orange-text-gradient {
-  background: #f12711;
-  background: -webkit-linear-gradient(to top, #f12711, #f5af19);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#f12711),
-    to(#f5af19)
-  );
-  background: -webkit-linear-gradient(bottom, #f12711, #f5af19);
-  background: -moz-linear-gradient(bottom, #f12711, #f5af19);
-  background: -o-linear-gradient(bottom, #f12711, #f5af19);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#f12711),
-    to(#f5af19)
-  );
-  background: linear-gradient(to top, #f12711, #f5af19);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #f5af19;
 }
 
 .green-text-gradient {
-  background: #11998e;
-  background: -webkit-linear-gradient(to top, #11998e, #38ef7d);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#11998e),
-    to(#38ef7d)
-  );
-  background: -webkit-linear-gradient(bottom, #11998e, #38ef7d);
-  background: -moz-linear-gradient(bottom, #11998e, #38ef7d);
-  background: -o-linear-gradient(bottom, #11998e, #38ef7d);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#11998e),
-    to(#38ef7d)
-  );
-  background: linear-gradient(to top, #11998e, #38ef7d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #11998e;
 }
 
 .black-text-gradient {
-  background: #000000;
-  background: -webkit-linear-gradient(to top, #000000, #fff, #000000);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#000000),
-    color-stop(#fff),
-    to(#000000)
-  );
-  background: -webkit-linear-gradient(bottom, #000000, #fff, #000000);
-  background: -moz-linear-gradient(bottom, #000000, #fff, #000000);
-  background: -o-linear-gradient(bottom, #000000, #fff, #000000);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#000000),
-    color-stop(#fff),
-    to(#000000)
-  );
-  background: linear-gradient(to top, #000000, #fff, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.blue-text-gradient {
-  background: #56ccf2;
-  background: -webkit-linear-gradient(to top, #2f80ed, #56ccf2);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#2f80ed),
-    to(#56ccf2)
-  );
-  background: -webkit-linear-gradient(bottom, #2f80ed, #56ccf2);
-  background: -moz-linear-gradient(bottom, #2f80ed, #56ccf2);
-  background: -o-linear-gradient(bottom, #2f80ed, #56ccf2);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#2f80ed),
-    to(#56ccf2)
-  );
-  background: linear-gradient(to top, #2f80ed, #56ccf2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
 }
 
 .pink-text-gradient {
-  background: #ec008c;
-  background: -webkit-linear-gradient(to top, #ec008c, #fc6767);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#ec008c),
-    to(#fc6767)
-  );
-  background: -webkit-linear-gradient(bottom, #ec008c, #fc6767);
-  background: -moz-linear-gradient(bottom, #ec008c, #fc6767);
-  background: -o-linear-gradient(bottom, #ec008c, #fc6767);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#ec008c),
-    to(#fc6767)
-  );
-  background: linear-gradient(to top, #ec008c, #fc6767);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ec008c;
+}
+
+.blue-text-gradient {
+  color: #2f80ed;
 }
 
 .violet-text-gradient {
-  background: rgb(98, 3, 103);
-  background: -webkit-linear-gradient(to top, #620367, #ce5ad4, #620367);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#620367),
-    color-stop(#ce5ad4),
-    to(#620367)
-  );
-  background: -webkit-linear-gradient(bottom, #620367, #ce5ad4, #620367);
-  background: -moz-linear-gradient(bottom, #620367, #ce5ad4, #620367);
-  background: -o-linear-gradient(bottom, #620367, #ce5ad4, #620367);
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#620367),
-    color-stop(#ce5ad4),
-    to(#620367)
-  );
-  background: linear-gradient(to top, #620367, #ce5ad4, #620367);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #620367;
+}
+
+@supports (
+  (-webkit-background-clip: text) or (background-clip: text) or
+    (-moz-background-clip: text) or (-webkit-text-fill-color: transparent)
+) {
+  .lightblue-text-gradient {
+    background: -webkit-linear-gradient(to top, #5cd6ff, #b6edff);
+    background: linear-gradient(to top, #5cd6ff, #b6edff);
+  }
+
+  .yellow-text-gradient {
+    background: -webkit-linear-gradient(to top, #61603c, #f2ef56, #61603c);
+    background: linear-gradient(to top, #61603c, #f2ef56, #61603c);
+  }
+
+  .green-pink-text-gradient {
+    background: -webkit-linear-gradient(-to left, #00cea8 1.9%, #bf61ff 97.5%);
+    background: linear-gradient(to left, #00cea8 1.9%, #bf61ff 97.5%);
+    -moz-animation: green-pink-text-gradient 10s linear infinite;
+    -o-animation: green-pink-text-gradient 10s linear infinite;
+    animation: green-pink-text-gradient 10s linear infinite;
+    -webkit-animation: green-pink-text-gradient 10s linear infinite;
+  }
+
+  .orange-text-gradient {
+    background: -webkit-linear-gradient(to top, #f12711, #f5af19);
+    background: linear-gradient(to top, #f12711, #f5af19);
+  }
+
+  .green-text-gradient {
+    background: -webkit-linear-gradient(to top, #11998e, #38ef7d);
+    background: linear-gradient(to top, #11998e, #38ef7d);
+  }
+
+  .black-text-gradient {
+    background: -webkit-linear-gradient(to top, #000000, #fff, #000000);
+    background: linear-gradient(to top, #000000, #fff, #000000);
+  }
+
+  .pink-text-gradient {
+    background: -webkit-linear-gradient(to top, #ec008c, #fc6767);
+    background: linear-gradient(to top, #ec008c, #fc6767);
+  }
+
+  .blue-text-gradient {
+    background: -webkit-linear-gradient(to top, #2f80ed, #56ccf2);
+    background: linear-gradient(to top, #2f80ed, #56ccf2);
+  }
+
+  .violet-text-gradient {
+    background: -webkit-linear-gradient(to top, #620367, #ce5ad4, #620367);
+    background: linear-gradient(to top, #620367, #ce5ad4, #620367);
+  }
+
+  .lightblue-text-gradient,
+  .yellow-text-gradient,
+  .green-pink-text-gradient,
+  .orange-text-gradient,
+  .green-text-gradient,
+  .black-text-gradient,
+  .pink-text-gradient,
+  .blue-text-gradient,
+  .violet-text-gradient {
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .stroke-text {
-  color: transparent;
-  -webkit-text-stroke: 1px #aaa6c3;
-  text-stroke: 1px #aaa6c3;
+  color: #aaa6c3;
   letter-spacing: 2px;
   word-spacing: 1px;
+}
+
+@supports (-webkit-text-stroke: 1px #aaa6c3) {
+  .stroke-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #aaa6c3;
+    text-stroke: 1px #aaa6c3;
+  }
 }
 
 .loader {
