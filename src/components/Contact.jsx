@@ -39,7 +39,7 @@ const Contact = () => {
             from_name: form.name,
             to_name: "Abolfazl",
             from_email: form.email,
-            to_email: "abolfazl2007fx@gmail.com",
+            to_email: "workabolfazltaghadosi@gmail.com",
             message: form.message,
           },
           "w-gKHjzOwZVn67NV-"
@@ -50,10 +50,10 @@ const Contact = () => {
             alert_box.innerHTML =
               "Thank you ! I will get back to you as soon as possible.";
             alert_box.classList.add("alert_box_animation");
-            button_ref.current.setAttribute('disabled', true)
+            button_ref.current.setAttribute("disabled", true);
             setTimeout(() => {
               alert_box.classList.remove("alert_box_animation");
-              button_ref.current.removeAttribute('disabled')
+              button_ref.current.removeAttribute("disabled");
             }, 8000);
             setForm({
               name: "",
@@ -65,10 +65,10 @@ const Contact = () => {
             setLoading(false);
             alert_box.innerHTML = "Something went wrong.";
             alert_box.classList.add("alert_box_animation");
-            button_ref.current.setAttribute('disabled', true)
+            button_ref.current.setAttribute("disabled", true);
             setTimeout(() => {
               alert_box.classList.remove("alert_box_animation");
-              button_ref.current.removeAttribute('disabled')
+              button_ref.current.removeAttribute("disabled");
             }, 8000);
             console.log(error);
           }
@@ -85,10 +85,17 @@ const Contact = () => {
       >
         <CharacterAnimation text="Get in touch" textStyle="sectionSubText" />
         <CharacterAnimation text="Contact." textStyle="sectionHeadText" />
-        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8" autoComplete="off">
+        <form
+          onSubmit={handleSubmit}
+          className="mt-12 flex flex-col gap-8"
+          autoComplete="off"
+        >
           <label className="flex flex-col relative contact-form__label">
             <span className="text-white font-medium mb-4">Your Name ?</span>
-            <div aria-hidden className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300" />
+            <div
+              aria-hidden
+              className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300"
+            />
             <input
               type="text"
               name="name"
@@ -100,7 +107,10 @@ const Contact = () => {
           </label>
           <label className="flex flex-col relative contact-form__label">
             <span className="text-white font-medium mb-4">Your Email ?</span>
-            <div aria-hidden className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300" />
+            <div
+              aria-hidden
+              className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300"
+            />
             <input
               type="email"
               name="email"
@@ -112,7 +122,10 @@ const Contact = () => {
           </label>
           <label className="flex flex-col relative contact-form__label">
             <span className="text-white font-medium mb-4">Your Message ?</span>
-            <div aria-hidden className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300" />
+            <div
+              aria-hidden
+              className="green-pink-gradient rounded-lg -z-10 focus-within:scale-105 w-full h-[calc(100%-2.5rem)] absolute left-0 bottom-0 duration-300"
+            />
             <textarea
               rows="7"
               name="message"
@@ -134,7 +147,10 @@ const Contact = () => {
               {socials.map((social) => (
                 <a
                   href={social.link}
-                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full relative focus:-translate-y-1 ${social.title === "Git hub" && "after:bg-white after:w-[78%] after:h-[78%] after:absolute after:rounded-full after:top-1/2 after:-translate-x-1/2 after:left-1/2 after:-translate-y-1/2 after:-z-[1]"}`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full relative focus:-translate-y-1 ${
+                    social.title === "Git hub" &&
+                    "after:bg-white after:w-[78%] after:h-[78%] after:absolute after:rounded-full after:top-1/2 after:-translate-x-1/2 after:left-1/2 after:-translate-y-1/2 after:-z-[1]"
+                  }`}
                   key={social.link}
                   target="_blank"
                   rel="noopener noreferrer"
